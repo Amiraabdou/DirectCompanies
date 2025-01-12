@@ -1,0 +1,172 @@
+﻿@inject DirectCompanies.Services.IEmployeeService IEmployeeService
+@inject DirectCompanies.Services.ISetupKeyValueService ISetupKeyValueService
+@inject IHttpContextAccessor HttpContextAccessor
+@inject UserManager<ApplicationUser> UserManager
+
+    @inject DirectCompanies.Services.IOutBoxEventService IOutBoxEventService
+
+
+<div class="modal Show" tabindex="-1" role="dialog" style="display:block">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            
+                <EditForm Model="@TheEmployee" OnValidSubmit="Save">
+                    <DataAnnotationsValidator />
+
+            <div class="modal-body">
+                <div class="form-group">
+                        <label>@Localization.Localizer.GetUi("Name")</label>
+
+                    <InputText  class="form-control" name="name" @bind-Value="@TheEmployee.Name" />
+                        <ValidationMessage For="@(() => TheEmployee.Name)" />
+
+                </div>
+                <div class="form-group">
+                        <label>@Localization.Localizer.GetUi("IDCardNo")</label>
+                        <InputText class="form-control" name="name" @bind-Value="@TheEmployee.IDCardNo" />
+                        <ValidationMessage For="@(() => TheEmployee.IDCardNo)" />
+
+                    </div>
+                    <div class="form-group">
+                        <label>@Localization.Localizer.GetUi("PhoneNumber")</label>
+
+                        <InputText class="form-control" name="name" @bind-Value="@TheEmployee.PhoneNumber" />
+                        <ValidationMessage For="@(() => TheEmployee.PhoneNumber)" />
+
+                    </div>
+                    <div class="form-group">
+                        <label>@Localization.Localizer.GetUi("Address") </label>
+
+                        <InputText class="form-control" name="name" @bind-Value="@TheEmployee.Address" />
+                        <ValidationMessage For="@(() => TheEmployee.Address)" />
+
+                    </div>
+                    <div class="form-group">
+                        <label>@Localization.Localizer.GetUi("MedicalContractClass")</label>
+
+                        <InputSelect class="form-control" @bind-Value="@TheEmployee.MedicalContractClassId">
+                            <option></option>
+                            @foreach (var MedicalContractClass in MedicalContractClasses)
+                            {
+                                <option value="@MedicalContractClass.Id">@MedicalContractClass.Name</option>
+                            }
+                        </InputSelect>
+                        <ValidationMessage For="@(() => TheEmployee.MedicalContractClassId)" />
+
+                    </div>
+                    <div class="form-group">
+                        <label>@Localization.Localizer.GetUi("BeneficiaryType")</label>
+
+                        <InputSelect class="form-control" @bind-Value="@TheEmployee.BeneficiaryTypeId">
+                            <option></option>
+                            @foreach (var BeneficiaryType in BeneficiaryTypes)
+                            {
+                                <option value="@BeneficiaryType.Id">@BeneficiaryType.Name</option>
+                            }
+                        </InputSelect>
+                        <ValidationMessage For="@(() => TheEmployee.BeneficiaryTypeId)" />
+
+                    </div>
+                    <div class="form-group">
+                        <label>@Localization.Localizer.GetUi("Client")</label>
+
+                        <InputText class="form-control" name="name" @bind-Value="@TheEmployee.CompanyName" readonly />
+                    </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" @onclick="() => Close()">Close</button>
+
+            </div>
+            </EditForm>
+        </div>
+    </div>
+</div>
+
+
+@code {
+
+
+    [CascadingParameter]
+    public Home _parent { get; set; } = new();
+    [Parameter]
+    public EmployeeDto? TheEmployee { get; set; } = new();
+
+
+    public List<KeyValue> MedicalContractClasses { get; set; }
+    public List<KeyValue> BeneficiaryTypes = new();
+
+
+
+
+    [Parameter] public EventCallback OnClose { get; set; }
+    [Parameter] public string lang { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        lang = System.Globalization.CultureInfo.CurrentCulture.Name == "ar-EG" ? "ar" : "en";
+
+
+        MedicalContractClasses = await ISetupKeyValueService.GetKeyValueList<MedicalContractClass>(lang);
+        BeneficiaryTypes = await ISetupKeyValueService.GetKeyValueList<BeneficiaryType>(lang);
+
+
+
+
+    }
+    protected override async Task OnParametersSetAsync()
+    {
+        var UserName = HttpContextAccessor.HttpContext?.Request?.Cookies["UserName"];
+
+        var user = await UserManager.FindByNameAsync(UserName);
+
+        if (TheEmployee?.Id == 0 || TheEmployee==null)
+        {
+            TheEmployee = new EmployeeDto
+        {
+            Id = DecimalHelper.NewID(),
+            Name = string.Empty,
+            Address = string.Empty,
+            PhoneNumber = string.Empty,
+            IDCardNo = string.Empty,
+            CompanyName = user.CompanyName,
+            BeneficiaryTypeName = string.Empty,
+            BeneficiaryTypeId = null,
+            MedicalContractClassId = null,
+            MedicalContractClassName = string.Empty
+        };
+        }
+    }
+    public async void Close()
+    {
+     
+        OnClose.InvokeAsync();
+
+    }
+    public void Save()
+    {
+        SetMedicalContractAndBeneficiaryTypeName(TheEmployee??new());
+        IEmployeeService.SaveEmployee(TheEmployee ?? new());
+        this.Close();
+        _parent.Search();
+
+
+    }
+    private void SetMedicalContractAndBeneficiaryTypeName(EmployeeDto TheEmployee)
+    {
+        string MedicalContractClassName=null;
+        string BeneficiaryTypeName= null;
+        if(TheEmployee.MedicalContractClassId != null)
+        {
+            MedicalContractClassName = MedicalContractClasses.FirstOrDefault(x => x.Id == TheEmployee.MedicalContractClassId)?.Name;
+        }
+        if (TheEmployee.BeneficiaryTypeId != null)
+        {
+            BeneficiaryTypeName = BeneficiaryTypes.FirstOrDefault(x => x.Id == TheEmployee.BeneficiaryTypeId)?.Name;
+        }
+
+        TheEmployee.MedicalContractClassName = MedicalContractClassName;
+        TheEmployee.BeneficiaryTypeName = BeneficiaryTypeName;
+    }
+    }

@@ -1,0 +1,26 @@
+﻿:root {
+  --the-main-color: #47B9EA;
+  --secondary-orange: #47B9EA;
+  --secondery-cz: #FFC107;
+  --black-color: #000000;
+  --secondry-black-color: #0b0b0b;
+  --grey-color: #857b7b;
+  --white-smoke-color: #F5F5F5;
+  --Gray56-color: #8F8F8F;
+  --Gray85-color: #E9F5ED;
+  --Gray88-color: #E0E0E0;
+  --Shuttle-Grey: #656A64;
+  --white-color: #FFFFFF;
+  --forzen-moss-green: #E6F5E6;
+  --green-light-grey: #c9ded4;
+  --border-color: #0b0b0b;
+  --Mercury-color: #ebebeb;
+  --higheLight-blue: #0b0b0b;
+  --text-color: #0b0b0b;
+  --hover-btn: #2287b3;
+  --body-color: #f5f6f7;
+  --btn-apply-hover: #2287b3;
+  --text-footer: #47B9EA;
+  --bg-footer: #0b0b0b;
+  --svg-color: #bdeafd;
+}

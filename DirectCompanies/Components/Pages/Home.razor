@@ -1,0 +1,224 @@
+﻿@page "/"
+@inject DirectCompanies.Services.IEmployeeService IEmployeeService
+@inject NavigationManager Navigation
+
+<PageTitle>Employees</PageTitle>
+
+
+
+
+
+
+<div class="container-fluid">
+    <div class="button-container">
+        <button type="button" class="btn btn-info btn-sm" @onclick="() => ShowEmployeeModal=true">@Localization.Localizer.GetUi("Add")</button>
+    </div>
+
+    <div class="search-container">
+        <div class="search-width mx-auto">
+            <div class="input-group mb-3">
+                <input type="text"
+                       class="form-control"
+                       placeholder="@Localization.Localizer.GetUi("SearchByName")"
+                       @bind="SearchName"
+                       @oninput="Search" />
+                <span class="input-group-text" id="addon-wrapping" @onclick="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+            </div>
+        </div>
+        <div class="DownLoadAndUpload">
+
+            <a href="/Import/Employees.xlsx" download="Employees" target="_blank"
+               class="btn btn-outline-success btn-sm ms-1 shadow">
+                <i class="fas fa-file-excel"></i>
+                <span class="hidden-md-down hide-responsive">@Localization.Localizer.GetUi("Download")</span>
+            </a>
+            <InputFile Accept=".xls,.xlsx,.csv" OnChange="UploadEmployees" Id="UploadEmployee" />
+
+        </div>
+    </div>
+         </div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Localization.Localizer.GetUi("Name")</th>
+            <th>@Localization.Localizer.GetUi("MedicalContractClass")</th>
+            <th>@Localization.Localizer.GetUi("BeneficiaryType")</th>
+            <th colspan="2">@Localization.Localizer.GetUi("Actions")</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var Employee in Employees)
+        {
+            <tr>
+                <td>@Employee.Name</td>
+                <td>@Employee.MedicalContractClassName</td>
+                <td>@Employee.BeneficiaryTypeName</td>
+                <td>
+                    <button type="button" class="btn btn-info btn-sm" @onclick="() => EditEmployee(Employee)">@Localization.Localizer.GetUi("Edit")</button>
+                    <button type="button" class="btn btn-danger btn-sm" @onclick="() => DeleteEmployee(Employee)">@Localization.Localizer.GetUi("Delete")</button>
+               
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="d-flex justify-content-end align-items-end  mb-3" style="gap=1rem">
+    <!-- Page Size Selector -->
+    <div>
+        <label for="recordsPerPage">@Localization.Localizer.GetUi("RecordsNumber")</label>
+        <select id="recordsPerPage" class="form-control form-control-sm" @onchange="OnPageSizeChanged">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+    </div>
+
+    <!-- Pagination Numbers -->
+    <div>
+        @if (TotalPages > 1)
+        {
+            for (int i = 1; i <= TotalPages; i++)
+            {
+                var value = i;
+                <button class="btn btn-sm @(i == PageNumber ? "btn-primary" : "btn-secondary") mx-1"
+                        @onclick="() => ChangePage(value)">
+                    @i
+                </button>
+            }
+        }
+    </div>
+
+</div>
+
+
+
+
+@if (ShowDeleteMsg)
+{
+    <CascadingValue Value="this">
+
+        <DeleteMessage TheEmployee="@EmployeeToDelete" OnClose="CloseModal"></DeleteMessage>
+    </CascadingValue>
+
+}
+@if (ShowEmployeeModal)
+{
+    <CascadingValue Value="this">
+
+        <EmployeeModalComponent TheEmployee="@EmployeeToAddOrEdit" OnClose="CloseModal"></EmployeeModalComponent>
+    </CascadingValue>
+}
+
+
+
+
+@code {
+    public List<EmployeeDto>? Employees { get; set; } = [];
+    public EmployeeDto? EmployeeToAddOrEdit = new();
+    public EmployeeDto? EmployeeToDelete = new();
+    public bool ShowDeleteMsg { get; set; }
+    public bool ShowEmployeeModal { get; set; }
+    [Parameter]  public int PageSize { get; set; } = 3;
+    public int PageNumber { get; set; } = 1;
+    public int TotalItems { get; set; }
+    public int TotalPages => (int)Math.Ceiling((double)TotalItems / PageSize);
+
+    public string lang { get; set; }
+
+
+    [Parameter]
+    public string SearchName { get; set; } = "";
+
+    [CascadingParameter]
+    public CzAlert _czAlert { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        lang = System.Globalization.CultureInfo.CurrentCulture.Name == "ar-EG" ? "ar" : "en";
+
+        await LoadEmployees();
+
+    }
+    private async Task LoadEmployees()
+    {
+        var result = await IEmployeeService.GetAllEmployees(SearchName, lang, PageNumber, PageSize); 
+        Employees = result.Items;
+        TotalItems = result.TotalItems;
+    }
+
+
+    public async Task Search()
+    {
+        PageNumber = 1;
+        await LoadEmployees();
+    }
+
+    public void EditEmployee(EmployeeDto? EmployeeDto)
+    {
+        ShowEmployeeModal = true;
+        EmployeeToAddOrEdit = EmployeeDto;
+
+
+    }
+    private void CloseModal()
+    {
+        ShowEmployeeModal = false;
+        EmployeeToAddOrEdit = null;
+        ShowDeleteMsg = false;
+        EmployeeToDelete = null;
+    }
+
+    private void DeleteEmployee(EmployeeDto? EmployeeDto)
+    {
+        ShowDeleteMsg = true;
+        EmployeeToDelete=EmployeeDto;
+    }
+
+    private async Task OnPageSizeChanged(ChangeEventArgs e)
+    {
+        PageSize = int.Parse(e.Value.ToString());
+        PageNumber = 1;
+        await LoadEmployees();
+    }
+
+    private async Task ChangePage(int newPage)
+    {
+        if (newPage < 1 || newPage > TotalPages || newPage == PageNumber) return;
+
+        PageNumber = newPage;
+        await LoadEmployees();
+    }
+
+    private async Task UploadEmployees(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+        if (file != null)
+        {
+
+            var buffer = new byte[e.File.Size];
+            await e.File.OpenReadStream().ReadAsync(buffer);
+            var FileBase64 = Convert.ToBase64String(buffer);
+            var Errors =await IEmployeeService.UploadEmployees(FileBase64);
+            if (Errors.Any())
+            {
+              _czAlert.ShowWarning(string.Join("<br/>", Errors));
+
+            }
+            else  await LoadEmployees();
+
+        }
+      }
+
+
+        
+    
+
+
+
+}

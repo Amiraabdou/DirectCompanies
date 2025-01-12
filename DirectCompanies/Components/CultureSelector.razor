@@ -1,0 +1,85 @@
+﻿@using System.Globalization
+@inject IJSRuntime JS
+@inject NavigationManager Navigation
+
+@if (isAppLoading)
+{
+    <span class="btn btn-client btn-md disabled">
+        @(CultureInfo.CurrentCulture.Name == "ar-EG" ? "English" : "عربي")
+    </span>
+}
+else
+{
+    @if (!isLoading)
+    {
+        <NavLink class="btn btn-client btn-md" href="@cultureSwitchUrl" @onclick="SwitchCulture" disabled="@isLoading">
+            @(CultureInfo.CurrentCulture.Name == "ar-EG" ? "English" : "عربي")
+        </NavLink>
+    }
+    else
+    {
+        <span class="btn btn-client btn-md disabled">
+            @(CultureInfo.CurrentCulture.Name == "ar-EG" ? "English" : "عربي")
+        </span>
+    }
+}
+
+@code
+{
+    private string? cultureSwitchUrl;
+    private CultureInfo? selectedCulture;
+    private bool isLoading { get; set; } = false;
+    private bool isAppLoading { get; set; } = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Navigation.LocationChanged += OnLocationChanged;
+    }
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            isAppLoading = !await JS.InvokeAsync<bool>("isScriptLoaded", "_framework/blazor.web.js");
+            if (!isAppLoading)
+            {
+                UpdateCultureSwitchUrl(Navigation.Uri);
+            }
+            StateHasChanged();
+        }
+    }
+    void OnLocationChanged(object? sender, LocationChangedEventArgs args)
+    {
+        if (!isAppLoading)
+        {
+            UpdateCultureSwitchUrl(args.Location);
+            StateHasChanged();
+        }
+    }
+    private async Task SwitchCulture(MouseEventArgs args)
+    {
+        if (isLoading || isAppLoading) return;
+
+        isLoading = true;
+        StateHasChanged();
+
+        await Task.Delay(5000);
+
+        isLoading = false;
+        StateHasChanged();
+    }
+    private void UpdateCultureSwitchUrl(string location)
+    {
+        location = location.Replace("%2f", "----")
+                           .Replace("%2F", "----");
+        var selectedCulture = CultureInfo.CurrentCulture.Name == "ar-EG" ? new CultureInfo("en-US") : new CultureInfo("ar-EG");
+        var uri = new Uri(location).GetComponents(UriComponents.PathAndQuery, UriFormat.Unescaped);
+        var cultureEscaped = Uri.EscapeDataString(selectedCulture.Name);
+        var uriEscaped = Uri.EscapeDataString(uri);
+
+        cultureSwitchUrl = $"Culture/Set?culture={cultureEscaped}&redirectUri={uriEscaped}";
+    }
+    public void Dispose()
+    {
+        Navigation.LocationChanged -= OnLocationChanged;
+    }
+}

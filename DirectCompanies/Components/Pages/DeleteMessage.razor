@@ -1,0 +1,43 @@
+﻿@inject DirectCompanies.Services.IEmployeeService IEmployeeService
+
+<div class="modal fade show" id="myModal" style="display:block; background-color: rgba(10,10,10,.8);" aria-modal="true" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">           
+            <div class="modal-body">
+                <p>Are You Sure You Want To Delete This?</p>
+            </div>
+            <div class="modal-footer">                               
+                        <button type="button" class="btn" @onclick="@ModalCancel">Cancel</button>
+                        <button type="button" class="btn btn-danger" @onclick=@ModalOk>Delete</button>
+                 
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    [CascadingParameter]
+    public Home _parent { get; set; } = new();
+    [Parameter] public EventCallback OnClose { get; set; }
+    [Parameter]
+    public EmployeeDto? TheEmployee { get; set; } = new();
+
+    private void ModalCancel()
+    {
+        OnClose.InvokeAsync(false);
+    }
+
+    private void ModalOk()
+    {
+        IEmployeeService.DeleteEmployee(TheEmployee);
+        OnClose.InvokeAsync(true);
+        _parent.Search();
+
+        _parent.Employees.Remove(TheEmployee);
+
+
+    }
+
+  
+}

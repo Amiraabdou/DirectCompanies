@@ -1,0 +1,43 @@
+﻿@inject NavigationManager _navManager;
+@inject IConfiguration _config
+@inject IWebHostEnvironment _env
+@inject IHttpContextAccessor HttpContextAccessor
+@inject NavigationManager Navigation
+@inject IJSRuntime JSRuntime
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm bg-white pb-3 fixed-top border-nav">
+    <div class="container-fluid px-5">
+        <div class="d-flex align-items-center">
+            <NavLink class="navbar-brand py-0 m-right-2" href="/">
+            </NavLink>
+            <button @onclick="ClearLoginCookie" style="padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s;">
+                @Localization.Localizer.GetUi("LogOut")
+            </button>
+
+        </div>
+        <form class="d-flex">
+            <CultureSelector />
+        </form>
+        
+    </div>
+</nav>
+<script>
+    function DeleteLoginCookie(cookieName) {
+        document.cookie = cookieName + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+    }
+</script>
+
+@code {
+    private async Task ClearLoginCookie()
+    {
+        await JSRuntime.InvokeVoidAsync("DeleteLoginCookie", "UserName");
+
+  
+        Navigation.NavigateTo("/login");
+
+        StateHasChanged();
+    }
+
+}

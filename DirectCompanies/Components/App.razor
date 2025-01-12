@@ -1,0 +1,51 @@
+﻿@using System.Globalization
+@using Microsoft.AspNetCore.Localization
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="Css/fontawesome/css/all.min.css" rel="stylesheet" type="text/css" />
+    <base href="/" />
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="DirectCompanies.styles.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <HeadOutlet />
+</head>
+
+<body dir="@(CultureInfo.CurrentCulture.Name == "ar-EG" ? "rtl" : "ltr")" lang="@(CultureInfo.CurrentCulture.Name)">
+    <Routes @rendermode=InteractiveServer />
+    <script src="Css/fontawesome/js/all.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="_framework/blazor.web.js"></script>
+
+    <script>
+        window.isScriptLoaded = function (url) {
+            const scripts = document.getElementsByTagName('script');
+            for (let i = 0; i < scripts.length; i++) {
+                if (scripts[i].src.includes(url)) {
+                    return true;
+                }
+            }
+            return false;
+        };
+    </script>
+</body>
+
+</html>
+@code {
+    [CascadingParameter]
+    public HttpContext? HttpContext { get; set; }
+
+    protected override void OnInitialized()
+    {
+        HttpContext?.Response.Cookies.Append(
+            CookieRequestCultureProvider.DefaultCookieName,
+            CookieRequestCultureProvider.MakeCookieValue(
+                new RequestCulture(
+                    CultureInfo.CurrentCulture,
+                    CultureInfo.CurrentUICulture)));
+    }
+}

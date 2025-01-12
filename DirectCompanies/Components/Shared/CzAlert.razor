@@ -1,0 +1,71 @@
+﻿<CascadingValue Value="this">
+    @if (_show)
+    {
+        <div class="container-alert position-fixed bottom-0 end-0 " style="max-height: 90%; min-height: 108px; overflow-y: auto; width: 300px; z-index: 99999;">
+            <div class="alert alert-@_type alert-dismissible m-0 shadow" style="height: 100%; position: relative; width: 100%;" role="alert">
+                <p class="mb-0" style="font-size: 0.8rem !important;">@_message</p>
+                <button type="button" class="btn-close text-end" data-bs-dismiss="alert" aria-label="Close" @onclick="Close"></button>
+            </div>
+        </div>
+    }
+    @ChildContent
+</CascadingValue>
+
+@code {
+    public enum AlertType
+    {
+        Success,
+        Danger,
+        Warning,
+        Info    
+    }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    string? _message;
+    string? _type;
+    bool _show;
+
+    public void ShowMessage(string message, AlertType type)
+    {
+        _message = message;
+        _type = type.ToString().ToLower();
+        _show = true;
+        StateHasChanged();
+    }
+
+    public void ShowSuccess(string message)
+    {
+        ShowMessage(message, AlertType.Success);
+    }
+
+    public void ShowSuccess()
+    {
+        ShowSuccess(Localization.Localizer.GetString("SuccessMessage"));
+    }
+
+    public void ShowDanger(string message)
+    {
+        ShowMessage(message, AlertType.Danger);
+    }
+
+    public void ShowWarning(string message)
+    {
+        ShowMessage(message, AlertType.Warning);
+    }
+
+    public void ShowInfo(string message)
+    {
+        ShowMessage(message, AlertType.Info);
+    }
+
+    public void Close()
+    {
+        _message = null;
+        _type = null;
+        _show = false;
+        StateHasChanged();
+    }
+
+}

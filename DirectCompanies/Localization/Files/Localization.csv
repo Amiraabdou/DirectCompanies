@@ -1,0 +1,40 @@
+﻿Key,Arabic,English
+Name,الاسم,Name
+PhoneNumber,رقم التليفون,Phone Number
+Address,العنوان,Address
+SearchByName,البحث بالاسم,Search By Name
+MedicalContractClass,فئة العقد,Medical Contract Class
+BeneficiaryType,نوع العضو,Beneficiary Type
+IDCardNo,الرقم القومي,IDCardNo
+Address,العنوان,Address
+Client,العميل,Client
+Close,اغلاق,Close
+Select,اختر,Select
+SuccessMessage,تمت العملية بنجاح,Done successfully.
+RequiredError,{0} مطلوب إدخاله,{0} is required
+UnexpectedError,خطأ غير متوقع,Unexpected Error
+UnexpectedErrorWithTrace,خطأ غير متوقع (رقم المراجعة: {0}),Unexpected Error (trace code:{0})
+Actions,الاجراءات,Actions
+Send,إرسال,Send
+NameMoreThanThreeError,الاسم يجب ان يكون ثلاثي ع الاقل,The name must contain a minimum of three components
+Required,مطلوب,Required
+PhoneNumberError,التليفون يجب ان يبدا ب 01 ويحتوي علي 10 ارقام ,The phone number must start with '01' and contain 10 digits.
+NationalIDError,الرقم القومي يجب ان يتكون من 14 رقم,The National ID must be exactly 14 digits
+Arabic,عربي,Arabic
+English,انجليزي,English
+Add,اضافة,Add
+Edit,تعديل,Edit
+Delete,حذف,Delete
+Back,رجوع,Back
+Search,ابحث,Search
+Download,تحميل,Download
+LogOut,تسجيل خروج,Log Out
+UploadFile,رفع ملف,Upload File
+NotExistInDatabase,غير موجود,Not Existed
+InvalidLoginData,اسم المستخدم او رقم المرور غير صحيح,Invalid username or password
+Username,اسم المستخدم,Username
+Login,تسجيل الدخول,Login
+Password,رقم المرور,Password
+LoginError,خطأ اثناء تسجيل الدخول,Error Has Happen While Logging In
+RecordsNumber, عدد العناصر في الصفحة,Records Number In Page
+Loading,تحميل...,Loading…
