@@ -11,196 +11,20 @@
       "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\controllers\\erpcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\components\\pages\\employeemodalcomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\components\\pages\\employeemodalcomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\services\\iemployeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\services\\iemployeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\attributes\\localizedvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\attributes\\localizedvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\components\\pages\\headercomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\components\\pages\\headercomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\components\\pages\\deletemessage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\components\\pages\\deletemessage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\components\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\components\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\dtos\\setupkeyvaluedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\dtos\\setupkeyvaluedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\dtos\\keyvalue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\dtos\\keyvalue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\dtos\\employeetosendtoerpdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\dtos\\employeetosendtoerpdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\dtos\\outboxeventdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\dtos\\outboxeventdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\dtos\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\dtos\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\helper\\decimalhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\helper\\decimalhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\models\\outboxevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\models\\outboxevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\security\\serviceproviderhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\security\\serviceproviderhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\security\\apikeyauthattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\security\\apikeyauthattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\services\\outboxeventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\services\\outboxeventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\services\\setupkeyvalueservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\services\\setupkeyvalueservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\services\\ioutboxeventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\services\\ioutboxeventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\services\\excelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\services\\excelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\enums\\document.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\enums\\document.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\services\\isetupkeyvalueservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\services\\isetupkeyvalueservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\services\\iexcelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\services\\iexcelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\helper\\custompasswordvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\helper\\custompasswordvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\localization\\files\\localization.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\localization\\files\\localization.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\components\\cultureselector.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\components\\cultureselector.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\components\\shared\\czalert.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\components\\shared\\czalert.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\models\\medicalcontractclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\models\\medicalcontractclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|d:\\directcompanies\\directcompanies\\models\\beneficiarytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD2CAEEB-C6DA-490D-86CE-EEB91FE1B74A}|DirectCompanies\\DirectCompanies.csproj|solutionrelative:directcompanies\\models\\beneficiarytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\DirectCompanies\\HealthcareLoyalty\\Controllers\\ErpController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthcareLoyalty\\Controllers\\ErpController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\DirectCompanies\\HealthcareLoyalty\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthcareLoyalty\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\DirectCompanies\\HealthcareLoyalty\\Security\\ApiKeyAuthAttribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthcareLoyalty\\Security\\ApiKeyAuthAttribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\DirectCompanies\\HealthcareLoyalty\\Security\\ServiceProviderHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthcareLoyalty\\Security\\ServiceProviderHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\DirectCompanies\\HealthcareLoyalty\\Components\\_Imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthcareLoyalty\\Components\\_Imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\DirectCompanies\\HealthcareLoyalty\\Components\\Layout\\MainLayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthcareLoyalty\\Components\\Layout\\MainLayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\DirectCompanies\\HealthcareLoyalty\\Components\\Shared\\CzAlert.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthcareLoyalty\\Components\\Shared\\CzAlert.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\DirectCompanies\\HealthcareLoyalty\\Components\\Pages\\DeleteMessage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthcareLoyalty\\Components\\Pages\\DeleteMessage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -210,22 +34,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 85,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "OutBoxEventDto.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Dtos\\OutBoxEventDto.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Dtos\\OutBoxEventDto.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Dtos\\OutBoxEventDto.cs",
-              "RelativeToolTip": "DirectCompanies\\Dtos\\OutBoxEventDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAoAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T06:11:36.804Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -234,7 +44,7 @@
               "RelativeDocumentMoniker": "DirectCompanies\\Services\\EmployeeService.cs",
               "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Services\\EmployeeService.cs",
               "RelativeToolTip": "DirectCompanies\\Services\\EmployeeService.cs",
-              "ViewState": "AQIAAE8AAAAAAAAAAAD4v1YAAAAyAAAA",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAYwDAAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-09T08:33:16.522Z",
               "IsPinned": true,
@@ -248,9 +58,51 @@
               "RelativeDocumentMoniker": "DirectCompanies\\Controllers\\ErpController.cs",
               "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Controllers\\ErpController.cs",
               "RelativeToolTip": "DirectCompanies\\Controllers\\ErpController.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAhwCsAAAA1AAAA",
+              "ViewState": "AQIAACAAAAAAAAAAAAAYwDcAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-08T13:08:34.343Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LocalizedValidation.cs",
+              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Attributes\\LocalizedValidation.cs",
+              "RelativeDocumentMoniker": "DirectCompanies\\Attributes\\LocalizedValidation.cs",
+              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Attributes\\LocalizedValidation.cs",
+              "RelativeToolTip": "DirectCompanies\\Attributes\\LocalizedValidation.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAYwDcAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-12T12:38:17.531Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EmployeeToSendToErpDto.cs",
+              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Dtos\\EmployeeToSendToErpDto.cs",
+              "RelativeDocumentMoniker": "DirectCompanies\\Dtos\\EmployeeToSendToErpDto.cs",
+              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Dtos\\EmployeeToSendToErpDto.cs",
+              "RelativeToolTip": "DirectCompanies\\Dtos\\EmployeeToSendToErpDto.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAA7wCgAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-12T09:49:56.99Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "DirectCompanies\\Services\\UserService.cs",
+              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Services\\UserService.cs",
+              "RelativeToolTip": "DirectCompanies\\Services\\UserService.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwBgAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-12T09:48:32.939Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -279,590 +131,17 @@
               "Name": "ST:0:0:{809f6ff3-8092-454a-8003-6d4091f9b5bb}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Models\\Employee.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Models\\Employee.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Models\\Employee.cs",
-              "RelativeToolTip": "DirectCompanies\\Models\\Employee.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAIAywBYAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T10:08:48.534Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "EmployeeModalComponent.razor",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Components\\Pages\\EmployeeModalComponent.razor",
-              "RelativeDocumentMoniker": "DirectCompanies\\Components\\Pages\\EmployeeModalComponent.razor",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Components\\Pages\\EmployeeModalComponent.razor",
-              "RelativeToolTip": "DirectCompanies\\Components\\Pages\\EmployeeModalComponent.razor",
-              "ViewState": "AQIAAJIAAAAAAAAAAAAAAJkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-09T09:12:29.269Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "Login.razor",
               "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Components\\Pages\\Login.razor",
               "RelativeDocumentMoniker": "DirectCompanies\\Components\\Pages\\Login.razor",
               "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Components\\Pages\\Login.razor",
               "RelativeToolTip": "DirectCompanies\\Components\\Pages\\Login.razor",
-              "ViewState": "AQIAADUAAAAAAAAAAAD4v0gAAAAIAAAA",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAAFQAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-08T09:20:55.585Z",
+              "WhenOpened": "2025-01-13T07:24:15.368Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Services\\UserService.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Services\\UserService.cs",
-              "RelativeToolTip": "DirectCompanies\\Services\\UserService.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAIAwwEMAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T09:48:32.939Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "HeaderComponent.razor",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Components\\Pages\\HeaderComponent.razor",
-              "RelativeDocumentMoniker": "DirectCompanies\\Components\\Pages\\HeaderComponent.razor",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Components\\Pages\\HeaderComponent.razor",
-              "RelativeToolTip": "DirectCompanies\\Components\\Pages\\HeaderComponent.razor",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAAAMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-06T13:32:33.023Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IEmployeeService.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Services\\IEmployeeService.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Services\\IEmployeeService.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Services\\IEmployeeService.cs",
-              "RelativeToolTip": "DirectCompanies\\Services\\IEmployeeService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAwAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T12:08:11.664Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Home.razor",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Components\\Pages\\Home.razor",
-              "RelativeDocumentMoniker": "DirectCompanies\\Components\\Pages\\Home.razor",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Components\\Pages\\Home.razor",
-              "RelativeToolTip": "DirectCompanies\\Components\\Pages\\Home.razor",
-              "ViewState": "AQIAAHYAAAAAAAAAAAAqwI8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-09T09:12:29.249Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DeleteMessage.razor",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Components\\Pages\\DeleteMessage.razor",
-              "RelativeDocumentMoniker": "DirectCompanies\\Components\\Pages\\DeleteMessage.razor",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Components\\Pages\\DeleteMessage.razor",
-              "RelativeToolTip": "DirectCompanies\\Components\\Pages\\DeleteMessage.razor",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABQAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-12T09:56:47.681Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Services\\IUserService.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Services\\IUserService.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Services\\IUserService.cs",
-              "RelativeToolTip": "DirectCompanies\\Services\\IUserService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAcAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T07:02:27.57Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Error.razor",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Components\\Pages\\Error.razor",
-              "RelativeDocumentMoniker": "DirectCompanies\\Components\\Pages\\Error.razor",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Components\\Pages\\Error.razor",
-              "RelativeToolTip": "DirectCompanies\\Components\\Pages\\Error.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-12T09:52:45.776Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "EmployeeToSendToErpDto.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Dtos\\EmployeeToSendToErpDto.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Dtos\\EmployeeToSendToErpDto.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Dtos\\EmployeeToSendToErpDto.cs",
-              "RelativeToolTip": "DirectCompanies\\Dtos\\EmployeeToSendToErpDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T09:49:56.99Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "KeyValue.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Dtos\\KeyValue.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Dtos\\KeyValue.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Dtos\\KeyValue.cs",
-              "RelativeToolTip": "DirectCompanies\\Dtos\\KeyValue.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T09:49:55.812Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "SetupKeyValueDto.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Dtos\\SetupKeyValueDto.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Dtos\\SetupKeyValueDto.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Dtos\\SetupKeyValueDto.cs",
-              "RelativeToolTip": "DirectCompanies\\Dtos\\SetupKeyValueDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T05:01:35.849Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "PagedResult.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Dtos\\PagedResult.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Dtos\\PagedResult.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Dtos\\PagedResult.cs",
-              "RelativeToolTip": "DirectCompanies\\Dtos\\PagedResult.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T09:49:47.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "OutBoxEvent.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Models\\OutBoxEvent.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Models\\OutBoxEvent.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Models\\OutBoxEvent.cs",
-              "RelativeToolTip": "DirectCompanies\\Models\\OutBoxEvent.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T13:27:02.319Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "LoginDto.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Dtos\\LoginDto.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Dtos\\LoginDto.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Dtos\\LoginDto.cs",
-              "RelativeToolTip": "DirectCompanies\\Dtos\\LoginDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T09:55:14.061Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "ServiceProviderHelper.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Security\\ServiceProviderHelper.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Security\\ServiceProviderHelper.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Security\\ServiceProviderHelper.cs",
-              "RelativeToolTip": "DirectCompanies\\Security\\ServiceProviderHelper.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T08:56:46.08Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "DecimalHelper.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Helper\\DecimalHelper.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Helper\\DecimalHelper.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Helper\\DecimalHelper.cs",
-              "RelativeToolTip": "DirectCompanies\\Helper\\DecimalHelper.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAD4vxsAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T08:00:45.366Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "ApiKeyAuthAttribute.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Security\\ApiKeyAuthAttribute.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Security\\ApiKeyAuthAttribute.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Security\\ApiKeyAuthAttribute.cs",
-              "RelativeToolTip": "DirectCompanies\\Security\\ApiKeyAuthAttribute.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T11:04:46.453Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Program.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Program.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Program.cs",
-              "RelativeToolTip": "DirectCompanies\\Program.cs",
-              "ViewState": "AQIAADIAAAAAAAAAAAAAAEQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T05:12:32.435Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "OutBoxEventService.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Services\\OutBoxEventService.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Services\\OutBoxEventService.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Services\\OutBoxEventService.cs",
-              "RelativeToolTip": "DirectCompanies\\Services\\OutBoxEventService.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAYwDkAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T05:12:16.407Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "SetupKeyValueService.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Services\\SetupKeyValueService.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Services\\SetupKeyValueService.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Services\\SetupKeyValueService.cs",
-              "RelativeToolTip": "DirectCompanies\\Services\\SetupKeyValueService.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAFcAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T09:30:17.898Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "ExcelService.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Services\\ExcelService.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Services\\ExcelService.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Services\\ExcelService.cs",
-              "RelativeToolTip": "DirectCompanies\\Services\\ExcelService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T09:29:51.361Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Controllers\\LoginController.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "DirectCompanies\\Controllers\\LoginController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T08:01:32.544Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "IOutBoxEventService.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Services\\IOutBoxEventService.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Services\\IOutBoxEventService.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Services\\IOutBoxEventService.cs",
-              "RelativeToolTip": "DirectCompanies\\Services\\IOutBoxEventService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T05:10:12.028Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "MainLayout.razor",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Components\\Layout\\MainLayout.razor",
-              "RelativeDocumentMoniker": "DirectCompanies\\Components\\Layout\\MainLayout.razor",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Components\\Layout\\MainLayout.razor",
-              "RelativeToolTip": "DirectCompanies\\Components\\Layout\\MainLayout.razor",
-              "ViewState": "AQIAAAUBAAAAAAAAAAAAAA8BAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-12T07:16:24.914Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Document.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Enums\\Document.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Enums\\Document.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Enums\\Document.cs",
-              "RelativeToolTip": "DirectCompanies\\Enums\\Document.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T05:07:05.471Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "ISetupKeyValueService.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Services\\ISetupKeyValueService.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Services\\ISetupKeyValueService.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Services\\ISetupKeyValueService.cs",
-              "RelativeToolTip": "DirectCompanies\\Services\\ISetupKeyValueService.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T11:02:34.979Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "IExcelService.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Services\\IExcelService.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Services\\IExcelService.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Services\\IExcelService.cs",
-              "RelativeToolTip": "DirectCompanies\\Services\\IExcelService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T11:18:47.962Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "ApplicationUser.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Models\\ApplicationUser.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Models\\ApplicationUser.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Models\\ApplicationUser.cs",
-              "RelativeToolTip": "DirectCompanies\\Models\\ApplicationUser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAABHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T06:32:20.63Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "CustomPasswordValidator.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Helper\\CustomPasswordValidator.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Helper\\CustomPasswordValidator.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Helper\\CustomPasswordValidator.cs",
-              "RelativeToolTip": "DirectCompanies\\Helper\\CustomPasswordValidator.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T06:53:16.379Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "Localization.csv",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Localization\\Files\\Localization.csv",
-              "RelativeDocumentMoniker": "DirectCompanies\\Localization\\Files\\Localization.csv",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Localization\\Files\\Localization.csv",
-              "RelativeToolTip": "DirectCompanies\\Localization\\Files\\Localization.csv",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAACUAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
-              "WhenOpened": "2025-01-08T06:16:06.558Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "CultureSelector.razor",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Components\\CultureSelector.razor",
-              "RelativeDocumentMoniker": "DirectCompanies\\Components\\CultureSelector.razor",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Components\\CultureSelector.razor",
-              "RelativeToolTip": "DirectCompanies\\Components\\CultureSelector.razor",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-06T12:37:17.548Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "App.razor",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Components\\App.razor",
-              "RelativeDocumentMoniker": "DirectCompanies\\Components\\App.razor",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Components\\App.razor",
-              "RelativeToolTip": "DirectCompanies\\Components\\App.razor",
-              "ViewState": "AQIAACEAAAAAAAAAAAAAACcAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-06T12:10:29.393Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "DirectCompanies\\appsettings.Development.json",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\appsettings.Development.json",
-              "RelativeToolTip": "DirectCompanies\\appsettings.Development.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-06T11:40:04.103Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "CzAlert.razor",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Components\\Shared\\CzAlert.razor",
-              "RelativeDocumentMoniker": "DirectCompanies\\Components\\Shared\\CzAlert.razor",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Components\\Shared\\CzAlert.razor",
-              "RelativeToolTip": "DirectCompanies\\Components\\Shared\\CzAlert.razor",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAABoAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-06T11:12:50.561Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "_Imports.razor",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Components\\_Imports.razor",
-              "RelativeDocumentMoniker": "DirectCompanies\\Components\\_Imports.razor",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Components\\_Imports.razor",
-              "RelativeToolTip": "DirectCompanies\\Components\\_Imports.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-06T09:53:29.898Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "BeneficiaryType.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Models\\BeneficiaryType.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Models\\BeneficiaryType.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Models\\BeneficiaryType.cs",
-              "RelativeToolTip": "DirectCompanies\\Models\\BeneficiaryType.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T09:22:36.649Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "MedicalContractClass.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\DirectCompanies\\Models\\MedicalContractClass.cs",
-              "RelativeDocumentMoniker": "DirectCompanies\\Models\\MedicalContractClass.cs",
-              "ToolTip": "D:\\DirectCompanies\\DirectCompanies\\Models\\MedicalContractClass.cs",
-              "RelativeToolTip": "DirectCompanies\\Models\\MedicalContractClass.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T09:22:33.694Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\DirectCompanies\\HealthcareLoyalty\\appsettings.json",
-              "RelativeDocumentMoniker": "HealthcareLoyalty\\appsettings.json",
-              "ToolTip": "D:\\DirectCompanies\\HealthcareLoyalty\\appsettings.json",
-              "RelativeToolTip": "HealthcareLoyalty\\appsettings.json",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-06T07:19:10.216Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "ApiKeyAuthAttribute.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\HealthcareLoyalty\\Security\\ApiKeyAuthAttribute.cs",
-              "RelativeDocumentMoniker": "HealthcareLoyalty\\Security\\ApiKeyAuthAttribute.cs",
-              "ToolTip": "D:\\DirectCompanies\\HealthcareLoyalty\\Security\\ApiKeyAuthAttribute.cs",
-              "RelativeToolTip": "HealthcareLoyalty\\Security\\ApiKeyAuthAttribute.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T07:16:23.839Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "ServiceProviderHelper.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\HealthcareLoyalty\\Security\\ServiceProviderHelper.cs",
-              "RelativeDocumentMoniker": "HealthcareLoyalty\\Security\\ServiceProviderHelper.cs",
-              "ToolTip": "D:\\DirectCompanies\\HealthcareLoyalty\\Security\\ServiceProviderHelper.cs",
-              "RelativeToolTip": "HealthcareLoyalty\\Security\\ServiceProviderHelper.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T07:16:21.542Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "ErpController.cs",
-              "DocumentMoniker": "D:\\DirectCompanies\\HealthcareLoyalty\\Controllers\\ErpController.cs",
-              "RelativeDocumentMoniker": "HealthcareLoyalty\\Controllers\\ErpController.cs",
-              "ToolTip": "D:\\DirectCompanies\\HealthcareLoyalty\\Controllers\\ErpController.cs",
-              "RelativeToolTip": "HealthcareLoyalty\\Controllers\\ErpController.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T07:15:23.084Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "_Imports.razor",
-              "DocumentMoniker": "D:\\DirectCompanies\\HealthcareLoyalty\\Components\\_Imports.razor",
-              "RelativeDocumentMoniker": "HealthcareLoyalty\\Components\\_Imports.razor",
-              "ToolTip": "D:\\DirectCompanies\\HealthcareLoyalty\\Components\\_Imports.razor",
-              "RelativeToolTip": "HealthcareLoyalty\\Components\\_Imports.razor",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-06T07:05:58.905Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "MainLayout.razor",
-              "DocumentMoniker": "D:\\DirectCompanies\\HealthcareLoyalty\\Components\\Layout\\MainLayout.razor",
-              "RelativeDocumentMoniker": "HealthcareLoyalty\\Components\\Layout\\MainLayout.razor",
-              "ToolTip": "D:\\DirectCompanies\\HealthcareLoyalty\\Components\\Layout\\MainLayout.razor",
-              "RelativeToolTip": "HealthcareLoyalty\\Components\\Layout\\MainLayout.razor",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-06T07:03:06.565Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "CzAlert.razor",
-              "DocumentMoniker": "D:\\DirectCompanies\\HealthcareLoyalty\\Components\\Shared\\CzAlert.razor",
-              "RelativeDocumentMoniker": "HealthcareLoyalty\\Components\\Shared\\CzAlert.razor",
-              "ToolTip": "D:\\DirectCompanies\\HealthcareLoyalty\\Components\\Shared\\CzAlert.razor",
-              "RelativeToolTip": "HealthcareLoyalty\\Components\\Shared\\CzAlert.razor",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-06T07:01:54.336Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "DeleteMessage.razor",
-              "DocumentMoniker": "D:\\DirectCompanies\\HealthcareLoyalty\\Components\\Pages\\DeleteMessage.razor",
-              "RelativeDocumentMoniker": "HealthcareLoyalty\\Components\\Pages\\DeleteMessage.razor",
-              "ToolTip": "D:\\DirectCompanies\\HealthcareLoyalty\\Components\\Pages\\DeleteMessage.razor",
-              "RelativeToolTip": "HealthcareLoyalty\\Components\\Pages\\DeleteMessage.razor",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-06T06:18:55.226Z"
             }
           ]
         },

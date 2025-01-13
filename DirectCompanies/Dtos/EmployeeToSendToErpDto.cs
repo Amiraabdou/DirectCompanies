@@ -21,6 +21,11 @@ namespace DirectCompanies.Dtos
             BeneficiaryTypeId =(decimal) Employee.BeneficiaryTypeId;
             MedicalContractClassId =(decimal) Employee.MedicalContractClassId;
             MedicalCustomerId = Employee.MedicalCustomerId;
+            IsPermanentSuspension = Employee.IsPermanentSuspension;
+            IsTemporarySuspension = Employee.IsTemporarySuspension;
+            SuspendFromDate = Employee.SuspendFromDate;
+            SuspendToDate = Employee.SuspendToDate;
+
 
         }
         public decimal Id { get; set; }
@@ -31,6 +36,10 @@ namespace DirectCompanies.Dtos
         public decimal BeneficiaryTypeId { get; set; }
         public decimal MedicalContractClassId { get; set; }
         public decimal MedicalCustomerId { get; set; }
+        public bool IsPermanentSuspension { get; set; }
+        public bool IsTemporarySuspension { get; set; }
+        public DateTime? SuspendFromDate { get; set; }
+        public DateTime? SuspendToDate { get; set; }
 
 
 

@@ -2,6 +2,10 @@
 Name,الاسم,Name
 PhoneNumber,رقم التليفون,Phone Number
 Address,العنوان,Address
+IsPermanentSuspension,أيقاف دائم,Is PermanentSuspension
+IsTemporarySuspension,أيقاف مؤقت,Is TemporarySuspension
+SuspendFromDate,تاريخ الايقاف من,Suspend FromDate
+SuspendToDate,تاريخ الايقاف الي,Suspend ToDate
 SearchByName,البحث بالاسم,Search By Name
 MedicalContractClass,فئة العقد,Medical Contract Class
 BeneficiaryType,نوع العضو,Beneficiary Type
@@ -20,6 +24,7 @@ NameMoreThanThreeError,الاسم يجب ان يكون ثلاثي ع الاقل,
 Required,مطلوب,Required
 PhoneNumberError,التليفون يجب ان يبدا ب 01 ويحتوي علي 10 ارقام ,The phone number must start with '01' and contain 10 digits.
 NationalIDError,الرقم القومي يجب ان يتكون من 14 رقم,The National ID must be exactly 14 digits
+SuspensionToRequiredErrorMessage,تاريخ الايقاف  مطلوب,Suspension To Is Required
 Arabic,عربي,Arabic
 English,انجليزي,English
 Add,اضافة,Add

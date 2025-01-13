@@ -18,6 +18,9 @@ using Microsoft.AspNetCore.Hosting;
 using DirectCompanies.Enums;
 using Document = DirectCompanies.Enums.Document;
 using DocumentFormat.OpenXml.InkML;
+using ClosedXML.Excel;
+using Microsoft.AspNetCore.Http;
+using DocumentFormat.OpenXml.ExtendedProperties;
 
 namespace DirectCompanies.Services
 {
@@ -41,8 +44,9 @@ namespace DirectCompanies.Services
         {
             var user = await _userService.GetLoggedUser();
 
-            var Query = _context.Employees.Where(c=>c.MedicalCustomerId==user.Id).AsQueryable();          
-            if (!string.IsNullOrEmpty(EmployeeName))
+
+            var Query = _context.Employees.Where(c=>c.MedicalCustomerId==user.Id).AsQueryable();
+             if (!string.IsNullOrEmpty(EmployeeName))
                 Query = Query.Where(c => c.Name.StartsWith(EmployeeName));
    
             Query = Query.Include(e => e.MedicalContractClass)
@@ -50,8 +54,8 @@ namespace DirectCompanies.Services
 
             var EmployeesDto = await Query
                         .Skip((PageNumber - 1) * PageSize)
-                        .Take(PageSize)
-                        .Select(e => new EmployeeDto(e, Lang, user.CompanyName))
+            .Take(PageSize)
+                        .Select(e => new EmployeeDto(e, Lang, user != null? user.CompanyName:null))
                          .ToListAsync();
             return new PagedResult<EmployeeDto>
             {
@@ -125,6 +129,10 @@ namespace DirectCompanies.Services
                 Address = c["Address"]?.ToString()?.TrimStart()?.TrimEnd(),
                 MedicalContractClassName = c["MedicalContractClass"]?.ToString()?.TrimStart()?.TrimEnd(),
                 BeneficiaryTypeName = c["BeneficiaryType"]?.ToString()?.TrimStart()?.TrimEnd(),
+                IsPermanentSuspension = c["IsPermanentSuspension"]?.ToString()?.TrimStart()?.TrimEnd(),
+                IsTemporarySuspension = c["IsTemporarySuspension"]?.ToString()?.TrimStart()?.TrimEnd(),
+                SuspendFromDate = c["SuspendFromDate"]?.ToString()?.TrimStart()?.TrimEnd(),
+                SuspendToDate = c["SuspendToDate"]?.ToString()?.TrimStart()?.TrimEnd(),
                 Index = i
             })?.Distinct()?.ToList();
 
@@ -136,11 +144,16 @@ namespace DirectCompanies.Services
 
             foreach (var item in sheetList)
             {
+
                 var RowNum = item.Index + 2;
                 decimal MedicalContractClassId = 0m;
                 decimal BeneficiaryTypeId = 0m;
                 Employee AddedEmployeeToSendToOutBox=null;
                 Employee ModifiedEmployeeToSendToOutBox=null;
+                bool IsPermanentSuspension= (string.Equals(item.IsPermanentSuspension, "TRUE", StringComparison.OrdinalIgnoreCase))?true:false;
+                bool IsTemporarySuspension = (string.Equals(item.IsTemporarySuspension, "TRUE", StringComparison.OrdinalIgnoreCase)) ? true : false;
+                DateTime? SuspendFromDate=null;
+                DateTime? SuspendToDate=null;
                 var itemErrors = new List<string>();
                 try {
                     if (string.IsNullOrEmpty(item.Name))
@@ -188,6 +201,19 @@ namespace DirectCompanies.Services
                         }
 
                     }
+                   
+                    if (IsTemporarySuspension)
+                    {
+                        if (string.IsNullOrEmpty(item.SuspendFromDate))
+                            itemErrors.Add(
+                               $"{Localizer.GetString("SuspendFromDate")} {Localizer.GetString("Required")}");
+                        if (string.IsNullOrEmpty(item.SuspendToDate))
+                            itemErrors.Add(
+                               $"{Localizer.GetString("SuspendToDate")} {Localizer.GetString("Required")}");
+                        SuspendFromDate= DateTime.ParseExact(item.SuspendFromDate, "M/d/yyyy h:mm:ss tt", null);
+                        SuspendToDate= DateTime.ParseExact(item.SuspendToDate, "M/d/yyyy h:mm:ss tt", null);
+
+                    }
                     if (string.IsNullOrEmpty(item.BeneficiaryTypeName))
                         itemErrors.Add(
                            $"{Localizer.GetString("BeneficiaryType")} {Localizer.GetString("Required")}");
@@ -213,7 +239,7 @@ namespace DirectCompanies.Services
                     var LoggedUser =await _userService.GetLoggedUser();
                     if (ExistingEmployee == null)
                     {
-                        var Employee = new Employee() {Id=DecimalHelper.NewID(), Name = item.Name, PhoneNumber = item?.PhoneNumber, Address = item.Address, IDCardNo = item.IDCardNo, MedicalContractClassId = MedicalContractClassId, BeneficiaryTypeId = BeneficiaryTypeId, MedicalCustomerId = LoggedUser.Id };
+                        var Employee = new Employee() {Id=DecimalHelper.NewID(), Name = item.Name, PhoneNumber = item?.PhoneNumber, Address = item.Address, IDCardNo = item.IDCardNo, MedicalContractClassId = MedicalContractClassId, BeneficiaryTypeId = BeneficiaryTypeId, MedicalCustomerId = LoggedUser.Id,IsPermanentSuspension=IsPermanentSuspension,IsTemporarySuspension=IsTemporarySuspension,SuspendFromDate=SuspendFromDate,SuspendToDate=SuspendToDate };
                         _context.Employees.Add(Employee);
                         AddedEmployeeToSendToOutBox = Employee;
                     }
@@ -224,6 +250,11 @@ namespace DirectCompanies.Services
                         ExistingEmployee.Address = item.Address;
                         ExistingEmployee.BeneficiaryTypeId = BeneficiaryTypeId;
                         ExistingEmployee.MedicalContractClassId = MedicalContractClassId;
+                        ExistingEmployee.IsTemporarySuspension = IsTemporarySuspension;
+                        ExistingEmployee.IsPermanentSuspension = IsPermanentSuspension;
+                        ExistingEmployee.SuspendToDate = SuspendToDate;
+                        ExistingEmployee.SuspendFromDate = SuspendFromDate;
+
                         _context.Employees.Update(ExistingEmployee);
                         ModifiedEmployeeToSendToOutBox = ExistingEmployee;
                     }                    

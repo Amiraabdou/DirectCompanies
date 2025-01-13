@@ -68,6 +68,35 @@
 
                     </div>
                     <div class="form-group">
+                        <label>@Localization.Localizer.GetUi("IsPermanentSuspension")</label>
+
+                        <InputCheckbox   @bind-Value="@TheEmployee.IsPermanentSuspension" />
+                        <ValidationMessage For="@(() => TheEmployee.IsPermanentSuspension)" />
+                    </div>
+                    <div class="form-group">
+                        <label>@Localization.Localizer.GetUi("IsTemporarySuspension")</label>
+
+                        <InputCheckbox @bind-Value="@TheEmployee.IsTemporarySuspension" @onclick="OnTemporarySuspensionChanged" />
+                        <ValidationMessage For="@(() => TheEmployee.IsTemporarySuspension)" />
+                    </div>
+                    @if (TheEmployee.IsTemporarySuspension)
+                    {
+                        <div class="form-group">
+                            <label>@Localization.Localizer.GetUi("SuspendFromDate")</label>
+
+                            <InputDate class="form-control" @bind-Value="@TheEmployee.SuspendFromDate" />
+
+                            <ValidationMessage For="@(() => TheEmployee.SuspendFromDate)" />
+                        </div>
+                        <div class="form-group">
+                            <label>@Localization.Localizer.GetUi("SuspendToDate")</label>
+
+                            <InputDate class="form-control" @bind-Value="@TheEmployee.SuspendToDate" />
+
+                            <ValidationMessage For="@(() => TheEmployee.SuspendToDate)" />
+                        </div>
+                    }
+                    <div class="form-group">
                         <label>@Localization.Localizer.GetUi("Client")</label>
 
                         <InputText class="form-control" name="name" @bind-Value="@TheEmployee.CompanyName" readonly />
@@ -134,7 +163,13 @@
             BeneficiaryTypeName = string.Empty,
             BeneficiaryTypeId = null,
             MedicalContractClassId = null,
-            MedicalContractClassName = string.Empty
+            MedicalContractClassName = string.Empty,
+            IsPermanentSuspension=false,
+            IsTemporarySuspension=false,
+            SuspendFromDate=DateTime.Now,
+            SuspendToDate=DateTime.Now
+
+            
         };
         }
     }
@@ -169,4 +204,12 @@
         TheEmployee.MedicalContractClassName = MedicalContractClassName;
         TheEmployee.BeneficiaryTypeName = BeneficiaryTypeName;
     }
+    private async Task OnTemporarySuspensionChanged()
+    {       
+            TheEmployee.SuspendToDate = null; 
+            TheEmployee.SuspendFromDate = null; 
+        
+        StateHasChanged();
     }
+    
+}

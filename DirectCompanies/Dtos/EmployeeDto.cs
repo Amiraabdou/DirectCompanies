@@ -29,6 +29,10 @@ namespace DirectCompanies.Dtos
             MedicalContractClassName=  Employee.MedicalContractClass.ValueAr ;
             MedicalContractClassId=Employee.MedicalContractClassId;
             this.CompanyName=CompanyName;
+            IsPermanentSuspension= Employee.IsPermanentSuspension;
+            IsTemporarySuspension= Employee.IsTemporarySuspension;
+            SuspendFromDate = Employee.SuspendFromDate;
+            SuspendToDate = Employee.SuspendToDate;
         }
 
         public decimal Id { get; set; }
@@ -59,5 +63,14 @@ namespace DirectCompanies.Dtos
         [LocalizedValidation.LocalizedRequired("Required")]
 
         public decimal? MedicalContractClassId { get; set; }
+        public bool IsPermanentSuspension { get; set; }
+        public bool IsTemporarySuspension { get; set; }
+        [LocalizedRequiredIfSuspended("SuspensionToRequiredErrorMessage")]
+
+
+        public DateTime? SuspendFromDate { get; set; }
+        [LocalizedRequiredIfSuspended("SuspensionToRequiredErrorMessage")]
+
+        public DateTime? SuspendToDate { get; set; }
     }
 }

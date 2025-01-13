@@ -169,3 +169,4 @@ D:\DirectCompanies\DirectCompanies\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptog
 D:\DirectCompanies\DirectCompanies\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\DirectCompanies\DirectCompanies\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
 D:\DirectCompanies\DirectCompanies\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+D:\DirectCompanies\DirectCompanies\obj\Debug\net8.0\DirectCompanies.sourcelink.json
