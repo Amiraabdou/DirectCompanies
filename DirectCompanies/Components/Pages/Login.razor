@@ -38,18 +38,18 @@
     }
 </style>
 <div class="centered-form">
-    <EditForm Model="@loginModel" OnValidSubmit="HandleValidSubmit" class="login-box">
+    <EditForm Model="@LoginDto" OnValidSubmit="HandleValidSubmit" class="login-box">
         <DataAnnotationsValidator />
         <ValidationSummary />
 
         <div class="form-group">
             <label for="username">@Localization.Localizer.GetUi("Username")</label>
-            <InputText id="username" class="form-control" @bind-Value="loginModel.Username" required />
+            <InputText id="username" class="form-control" @bind-Value="LoginDto.Username" required />
         </div>
 
         <div class="form-group">
             <label for="password">@Localization.Localizer.GetUi("Password")</label>
-            <InputText id="password" type="password" class="form-control" @bind-Value="loginModel.Password" required />
+            <InputText id="password" type="password" class="form-control" @bind-Value="LoginDto.Password" required />
         </div>
 
         <div class="form-group">
@@ -66,11 +66,11 @@
 </div>
 
 @code {
-    private LoginDto loginModel = new();
+    private LoginDto LoginDto = new();
     private string? loginError;
     private async Task HandleValidSubmit()
     {
-        var user = await UserManager.FindByNameAsync(loginModel.Username);
+        var user = await UserManager.FindByNameAsync(LoginDto.Username);
 
         if (user == null)
         {
@@ -80,7 +80,7 @@
 
         try
         {
-            var result = await SignInManager.CheckPasswordSignInAsync(user, loginModel.Password, false);
+            var result = await SignInManager.CheckPasswordSignInAsync(user, LoginDto.Password, false);
 
             if (result.Succeeded)
             {

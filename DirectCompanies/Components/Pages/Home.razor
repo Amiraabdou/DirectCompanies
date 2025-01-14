@@ -4,11 +4,6 @@
 
 <PageTitle>Employees</PageTitle>
 
-
-
-
-
-
 <div class="container-fluid">
     <div class="button-container">
         <button type="button" class="btn btn-info btn-sm" @onclick="() => ShowEmployeeModal=true">@Localization.Localizer.GetUi("Add")</button>
@@ -59,7 +54,7 @@
                 <td>@Employee.BeneficiaryTypeName</td>
                 <td>
                     <button type="button" class="btn btn-info btn-sm" @onclick="() => EditEmployee(Employee.Id)">@Localization.Localizer.GetUi("Edit")</button>
-                    <button type="button" class="btn btn-danger btn-sm" @onclick="() => DeleteEmployee(Employee)">@Localization.Localizer.GetUi("Delete")</button>
+                    <button type="button" class="btn btn-danger btn-sm" @onclick="() => DeleteEmployee(Employee.Id)">@Localization.Localizer.GetUi("Delete")</button>
                
                 </td>
             </tr>
@@ -68,7 +63,6 @@
 </table>
 
 <div class="d-flex justify-content-end align-items-end  mb-3" style="gap=1rem">
-    <!-- Page Size Selector -->
     <div>
         <label for="recordsPerPage">@Localization.Localizer.GetUi("RecordsNumber")</label>
         <select id="recordsPerPage" class="form-control form-control-sm" @onchange="OnPageSizeChanged">
@@ -79,7 +73,6 @@
         </select>
     </div>
 
-    <!-- Pagination Numbers -->
     <div>
         @if (TotalPages > 1)
         {
@@ -95,15 +88,11 @@
     </div>
 
 </div>
-
-
-
-
 @if (ShowDeleteMsg)
 {
     <CascadingValue Value="this">
 
-        <DeleteMessage Employee="@EmployeeToDelete" OnClose="CloseModal"></DeleteMessage>
+        <DeleteMessage EmployeeId="@EmployeeToDeleteId" OnClose="CloseModal"></DeleteMessage>
     </CascadingValue>
 
 }
@@ -111,17 +100,14 @@
 {
     <CascadingValue Value="this">
 
-        <EmployeeModalComponent EmployeeID="@EmployeeIDToAddOrEdit" OnClose="CloseModal"></EmployeeModalComponent>
+        <EmployeeModalComponent EmployeeId="@EmployeeIDToAddOrEdit" OnClose="CloseModal"></EmployeeModalComponent>
     </CascadingValue>
 }
-
-
-
 
 @code {
     public List<EmployeeDto>? Employees { get; set; } = [];
     public decimal? EmployeeIDToAddOrEdit = new ();
-    public EmployeeDto? EmployeeToDelete = new();
+    public decimal EmployeeToDeleteId = new();
     public bool ShowDeleteMsg { get; set; }
     public bool ShowEmployeeModal { get; set; }
     [Parameter]  public int PageSize { get; set; } = 3;
@@ -157,7 +143,7 @@
         };
 
 
-        var result = await IEmployeeService.GetAllEmployees(EmployeesPagedResult);
+        var result = await IEmployeeService.GetAll(EmployeesPagedResult);
         Employees = result.Items;
         TotalItems = result.TotalItems;
     }
@@ -181,13 +167,12 @@
         ShowEmployeeModal = false;
         EmployeeIDToAddOrEdit = null;
         ShowDeleteMsg = false;
-        EmployeeToDelete = null;
     }
 
-    private void DeleteEmployee(EmployeeDto? EmployeeDto)
+    private void DeleteEmployee(decimal EmployeeId)
     {
         ShowDeleteMsg = true;
-        EmployeeToDelete=EmployeeDto;
+        EmployeeToDeleteId = EmployeeId;
     }
 
     private async Task OnPageSizeChanged(ChangeEventArgs e)
@@ -214,12 +199,9 @@
             var buffer = new byte[e.File.Size];
             await e.File.OpenReadStream().ReadAsync(buffer);
             var FileBase64 = Convert.ToBase64String(buffer);
-            var Errors =await IEmployeeService.UploadEmployees(FileBase64);
+            var Errors =await IEmployeeService.Upload(FileBase64);
             if (Errors.Any())
-            {
                 _czAlert.ShowWarning(string.Join("<br/>", Errors));
-
-            }
 
             else { 
                 _czAlert.ShowSuccess();
@@ -228,11 +210,4 @@
 
         }
       }
-
-
-        
-    
-
-
-
 }

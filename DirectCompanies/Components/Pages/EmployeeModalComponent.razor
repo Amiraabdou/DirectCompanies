@@ -68,12 +68,6 @@
 
                     </div>
                     <div class="form-group">
-                        <label>@Localization.Localizer.GetUi("IsPermanentSuspension")</label>
-
-                        <InputCheckbox   @bind-Value="@EmployeeDto.IsPermanentSuspension" />
-                        <ValidationMessage For="@(() => EmployeeDto.IsPermanentSuspension)" />
-                    </div>
-                    <div class="form-group">
                         <label>@Localization.Localizer.GetUi("IsTemporarySuspension")</label>
 
                         <InputCheckbox @bind-Value="@EmployeeDto.IsTemporarySuspension" @onclick="OnTemporarySuspensionChanged" />
@@ -115,37 +109,25 @@
 
 
 @code {
-
-
     [CascadingParameter]
-    public Home _parent { get; set; } = new();
+    public Home Parent { get; set; } = new();
     public EmployeeDto? EmployeeDto { get; set; } = new();
     [Parameter]
-
-    public decimal? EmployeeID { get; set; }
-
-
+    public decimal? EmployeeId { get; set; }
     public List<KeyValue> MedicalContractClasses { get; set; }
     public List<KeyValue> BeneficiaryTypes = new();
-
-
-
-
-    [Parameter] public EventCallback OnClose { get; set; }
-    [Parameter] public string lang { get; set; }
+    [Parameter] 
+    public EventCallback OnClose { get; set; }
+    [Parameter]
+    public string lang { get; set; }
     [CascadingParameter]
-    public CzAlert _czAlert { get; set; }
+    public CzAlert czAlert { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
         lang = System.Globalization.CultureInfo.CurrentCulture.Name == "ar-EG" ? "ar" : "en";
-
-
         MedicalContractClasses = await ISetupKeyValueService.GetKeyValueList<MedicalContractClass>(lang);
         BeneficiaryTypes = await ISetupKeyValueService.GetKeyValueList<BeneficiaryType>(lang);
-
-
-
 
     }
     protected override async Task OnParametersSetAsync()
@@ -154,7 +136,7 @@
 
         var user = await UserManager.FindByNameAsync(UserName);
 
-        if (EmployeeID ==0 || EmployeeID == null)
+        if (EmployeeId ==0 || EmployeeId == null)
         {
             EmployeeDto = new EmployeeDto
         {
@@ -168,18 +150,14 @@
             BeneficiaryTypeId = null,
             MedicalContractClassId = null,
             MedicalContractClassName = string.Empty,
-            IsPermanentSuspension=false,
             IsTemporarySuspension=false,
             SuspendFromDate=DateTime.Now,
             SuspendToDate=DateTime.Now
-
-
         };
         }
-        else
-        {
-            EmployeeDto = await IEmployeeService.GetEmployee(EmployeeID, lang);
-        }
+        else        
+            EmployeeDto = await IEmployeeService.GetById(EmployeeId, lang);
+        
     }
     public async void Close()
     {
@@ -189,27 +167,18 @@
     }
     public async void Save()
     {
-        var savemsg=await  IEmployeeService.SaveEmployee(EmployeeDto ?? new());
+        var savemsg=await  IEmployeeService.Save(EmployeeDto ?? new());
         if (string.IsNullOrEmpty(savemsg))
-        {
-            _czAlert.ShowSuccess();
-
-        }
-        else
-        {
-            _czAlert.ShowDanger(savemsg);
-        }
-
+            czAlert.ShowSuccess();        
+        else       
+            czAlert.ShowDanger(savemsg);        
         this.Close();
-        _parent.Search();
-
-
+        Parent.Search();
     }
     private async Task OnTemporarySuspensionChanged()
     {       
         EmployeeDto.SuspendToDate = null;
         EmployeeDto.SuspendFromDate = null;
-
         StateHasChanged();
     }
     

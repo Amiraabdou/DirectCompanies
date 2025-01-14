@@ -19,7 +19,6 @@ namespace DirectCompanies.Models
             Address = EmployeeDto.Address;
             BeneficiaryTypeId =(decimal)EmployeeDto.BeneficiaryTypeId;
             MedicalContractClassId =(decimal) EmployeeDto.MedicalContractClassId;
-            IsPermanentSuspension= EmployeeDto.IsPermanentSuspension;
             IsTemporarySuspension= EmployeeDto.IsTemporarySuspension;
             SuspendFromDate = EmployeeDto.SuspendFromDate;
             SuspendToDate = EmployeeDto.SuspendToDate;
@@ -41,17 +40,10 @@ namespace DirectCompanies.Models
         public MedicalContractClass MedicalContractClass { get; set; }
         public BeneficiaryType BeneficiaryType { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
-
         public decimal MedicalCustomerId { get; set; }
-        public bool IsPermanentSuspension { get; set; }
         public bool IsTemporarySuspension { get; set; }
         public DateTime? SuspendFromDate { get; set; }
         public DateTime? SuspendToDate { get; set; }
         
-
-
-
-
-
     }
 }

@@ -24,7 +24,6 @@ namespace DirectCompanies.Dtos
             MedicalContractClassName=  Employee.MedicalContractClass.ValueAr ;
             MedicalContractClassId=Employee.MedicalContractClassId;
             this.CompanyName=CompanyName;
-            IsPermanentSuspension= Employee.IsPermanentSuspension;
             IsTemporarySuspension= Employee.IsTemporarySuspension;
             SuspendFromDate = Employee.SuspendFromDate;
             SuspendToDate = Employee.SuspendToDate;
@@ -56,11 +55,8 @@ namespace DirectCompanies.Dtos
         [CzRequired]
 
         public decimal? MedicalContractClassId { get; set; }
-        public bool IsPermanentSuspension { get; set; }
         public bool IsTemporarySuspension { get; set; }
         [CzRequiredIfSuspended("SuspensionToRequiredErrorMessage")]
-
-
         public DateTime? SuspendFromDate { get; set; }
         [CzRequiredIfSuspended("SuspensionToRequiredErrorMessage")]
 

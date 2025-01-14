@@ -2,7 +2,6 @@
 Name,الاسم,Name
 PhoneNumber,رقم التليفون,Phone Number
 Address,العنوان,Address
-IsPermanentSuspension,أيقاف دائم,Is PermanentSuspension
 IsTemporarySuspension,أيقاف مؤقت,Is TemporarySuspension
 SuspendFromDate,تاريخ الايقاف من,Suspend FromDate
 SuspendToDate,تاريخ الايقاف الي,Suspend ToDate
@@ -12,6 +11,10 @@ BeneficiaryType,نوع العضو,Beneficiary Type
 IDCardNo,الرقم القومي,IDCardNo
 Address,العنوان,Address
 Client,العميل,Client
+Cancel,الغاء,Cancel
+Cancel,الغاء,Cancel
+Delete,حذف,Delete
+DeleteMsg,هل انت متأكد انك تريد الحذف ؟,Are You Sure You Want To Delete This?
 Close,اغلاق,Close
 Select,اختر,Select
 SuccessMessage,تمت العملية بنجاح,Done successfully.
@@ -43,5 +46,6 @@ Username,اسم المستخدم,Username
 Login,تسجيل الدخول,Login
 Password,رقم المرور,Password
 LoginError,خطأ اثناء تسجيل الدخول,Error Has Happen While Logging In
+ExecutionError,خطأ حدث اثناء التنفيذ ,Error Has Happen While Execution
 RecordsNumber, عدد العناصر في الصفحة,Records Number In Page
 Loading,تحميل...,Loading…

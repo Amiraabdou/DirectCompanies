@@ -4,11 +4,11 @@
     <div class="modal-dialog">
         <div class="modal-content">           
             <div class="modal-body">
-                <p>Are You Sure You Want To Delete This?</p>
+                <p>@Localization.Localizer.GetUi("DeleteMsg")</p>
             </div>
-            <div class="modal-footer">                               
-                        <button type="button" class="btn" @onclick="@ModalCancel">Cancel</button>
-                        <button type="button" class="btn btn-danger" @onclick=@ModalOk>Delete</button>
+            <div class="modal-footer">
+                <button type="button" class="btn" @onclick="@Cancel">@Localization.Localizer.GetUi("Cancel")</button>
+                <button type="button" class="btn btn-danger" @onclick=@Delete>@Localization.Localizer.GetUi("Delete")</button>
                  
             </div>
         </div>
@@ -18,37 +18,29 @@
 @code {
 
     [CascadingParameter]
-    public Home _parent { get; set; } = new();
-    [Parameter] public EventCallback OnClose { get; set; }
+    public Home Parent { get; set; } = new();
     [Parameter]
-    public EmployeeDto? Employee { get; set; } = new();
+    public EventCallback OnClose { get; set; }
+    [Parameter]
+    public decimal EmployeeId { get; set; }
     [CascadingParameter]
-    public CzAlert _czAlert { get; set; }
+    public CzAlert czAlert { get; set; }
 
-    private void ModalCancel()
+    private void Cancel()
     {
         OnClose.InvokeAsync(false);
     }
 
-    private async void ModalOk()
+    private async Task Delete()
     {
-        var DeleteMsg=await IEmployeeService.DeleteEmployee(Employee);
+        var DeleteMsg = await IEmployeeService.Delete(EmployeeId);
         if (string.IsNullOrEmpty(DeleteMsg))
-        {
-            _czAlert.ShowSuccess();
-
-        }
+            czAlert.ShowSuccess();
         else
-        {
-            _czAlert.ShowDanger(DeleteMsg);
-        }
+            czAlert.ShowDanger(DeleteMsg);
+        
         OnClose.InvokeAsync(true);
-        _parent.Search();
+        Parent.Search();
 
-        _parent.Employees.Remove(Employee);
-
-
-    }
-
-  
+    } 
 }

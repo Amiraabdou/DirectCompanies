@@ -27,32 +27,44 @@ namespace DirectCompanies.Services
             _userService = userService;
             _outBoxEventService = outBoxEventService;
         }
-        public async Task<PagedResult<EmployeeDto>> GetAllEmployees(PagedResult<EmployeeDto>  PagedResult)
+        public async Task<PagedResult<EmployeeDto>> GetAll(PagedResult<EmployeeDto>  PagedResult)
         {
-            var user = await _userService.GetLoggedUser();
+            var User = await _userService.GetLoggedUser();
 
-            var Query = _context.Employees.Where(c=>c.MedicalCustomerId==user.Id).AsQueryable();
+            var Employees = _context.Employees.Where(c=>c.MedicalCustomerId== User.Id).AsQueryable();
              if (!string.IsNullOrEmpty(PagedResult.SearchName))
-                Query = Query.Where(c => c.Name.StartsWith(PagedResult.SearchName));
-   
-            Query = Query.Include(e => e.MedicalContractClass)
+                Employees = Employees.Where(c => c.Name.StartsWith(PagedResult.SearchName));
+
+            Employees = Employees.Include(e => e.MedicalContractClass)
                          .Include(e => e.BeneficiaryType);
 
-            var EmployeesDto = await Query
+            var EmployeesDto = await Employees
                         .Skip((PagedResult.PageNumber - 1) * PagedResult.PageSize)
                         .Take(PagedResult.PageSize)
-                        .Select(e => new EmployeeDto(e, PagedResult.Lang, user != null? user.CompanyName:null))
+                        .Select(e => new EmployeeDto(e, PagedResult.Lang, User != null? User.CompanyName:null))
                          .ToListAsync();
             return new PagedResult<EmployeeDto>
             {
                 Items = EmployeesDto,
                 PageNumber = PagedResult.PageNumber,
                 PageSize = PagedResult.PageSize,
-                TotalItems = await Query.CountAsync()
+                TotalItems = await Employees.CountAsync()
             };
         }
 
-        public async Task<string> SaveEmployee(EmployeeDto EmployeeDto)
+        public async Task<EmployeeDto> GetById(decimal? EmployeeId, string? lang)
+        {
+            var user = await _userService.GetLoggedUser();
+
+            EmployeeDto EmployeeDto;
+
+            var Employee = await _context.Employees.FirstOrDefaultAsync(c => c.Id == EmployeeId);
+            EmployeeDto = new EmployeeDto(Employee, lang, user != null ? user.CompanyName : null);
+            return EmployeeDto;
+
+        }
+
+        public async Task<string> Save(EmployeeDto EmployeeDto)
         {
             try
             {
@@ -65,14 +77,9 @@ namespace DirectCompanies.Services
                     .FirstOrDefaultAsync(c => c.Id == EmployeeDto.Id);
 
                 if (ExistingEmployee != null)
-                {
                     _context.Entry(ExistingEmployee).CurrentValues.SetValues(Employee);
-
-                }
                 else
-                {
                      _context.Employees.Add(Employee);
-                }
 
                 await _context.SaveChangesAsync();
 
@@ -84,16 +91,17 @@ namespace DirectCompanies.Services
             }
             catch (Exception ex)
             {
-               return ($"An error occurred while saving the employee: {ex.Message}");
+              return ($" {Localizer.GetString("ExecutionError")} {ex.Message}");
+                
             }
         }
    
-        public async Task<string> DeleteEmployee(EmployeeDto EmployeeDto)
+        public async Task<string> Delete(decimal EmployeeId)
         {
             try
             {
                 var ExistingEmployee = await _context.Employees
-                    .FirstOrDefaultAsync(c => c.Id == EmployeeDto.Id);
+                    .FirstOrDefaultAsync(c => c.Id == EmployeeId);
                 if (ExistingEmployee != null)
                 {
                     _context.Remove(ExistingEmployee);
@@ -105,12 +113,12 @@ namespace DirectCompanies.Services
             }
             catch (Exception ex)
             {
-                return ($"An error occurred while Deleting the employee: {ex.Message}");
+                return ($" {Localizer.GetString("ExecutionError")} {ex.Message}");
             }
 
         }
 
-        public async Task<List<string>> UploadEmployees(string FileBase64)
+        public async Task<List<string>> Upload(string FileBase64)
         {
             var sheetList = _excelService.SheetToList(FileBase64)?.Select((c, i) => new
             {
@@ -121,7 +129,6 @@ namespace DirectCompanies.Services
                 Address = c["Address"]?.ToString()?.TrimStart()?.TrimEnd(),
                 MedicalContractClassName = c["MedicalContractClass"]?.ToString()?.TrimStart()?.TrimEnd(),
                 BeneficiaryTypeName = c["BeneficiaryType"]?.ToString()?.TrimStart()?.TrimEnd(),
-                IsPermanentSuspension = c["IsPermanentSuspension"]?.ToString()?.TrimStart()?.TrimEnd(),
                 IsTemporarySuspension = c["IsTemporarySuspension"]?.ToString()?.TrimStart()?.TrimEnd(),
                 SuspendFromDate = c["SuspendFromDate"]?.ToString()?.TrimStart()?.TrimEnd(),
                 SuspendToDate = c["SuspendToDate"]?.ToString()?.TrimStart()?.TrimEnd(),
@@ -142,7 +149,6 @@ namespace DirectCompanies.Services
                 decimal BeneficiaryTypeId = 0m;
                 Employee AddedEmployeeToSendToOutBox=null;
                 Employee ModifiedEmployeeToSendToOutBox=null;
-                bool IsPermanentSuspension= (string.Equals(item.IsPermanentSuspension, "TRUE", StringComparison.OrdinalIgnoreCase))?true:false;
                 bool IsTemporarySuspension = (string.Equals(item.IsTemporarySuspension, "TRUE", StringComparison.OrdinalIgnoreCase)) ? true : false;
                 DateTime? SuspendFromDate=null;
                 DateTime? SuspendToDate=null;
@@ -231,7 +237,7 @@ namespace DirectCompanies.Services
                     var LoggedUser =await _userService.GetLoggedUser();
                     if (ExistingEmployee == null)
                     {
-                        var Employee = new Employee() {Id=DecimalHelper.NewID(), Name = item.Name, PhoneNumber = item?.PhoneNumber, Address = item.Address, IDCardNo = item.IDCardNo, MedicalContractClassId = MedicalContractClassId, BeneficiaryTypeId = BeneficiaryTypeId, MedicalCustomerId = LoggedUser.Id,IsPermanentSuspension=IsPermanentSuspension,IsTemporarySuspension=IsTemporarySuspension,SuspendFromDate=SuspendFromDate,SuspendToDate=SuspendToDate };
+                        var Employee = new Employee() {Id=DecimalHelper.NewID(), Name = item.Name, PhoneNumber = item?.PhoneNumber, Address = item.Address, IDCardNo = item.IDCardNo, MedicalContractClassId = MedicalContractClassId, BeneficiaryTypeId = BeneficiaryTypeId, MedicalCustomerId = LoggedUser.Id,IsTemporarySuspension=IsTemporarySuspension,SuspendFromDate=SuspendFromDate,SuspendToDate=SuspendToDate };
                         _context.Employees.Add(Employee);
                         AddedEmployeeToSendToOutBox = Employee;
                     }
@@ -243,7 +249,6 @@ namespace DirectCompanies.Services
                         ExistingEmployee.BeneficiaryTypeId = BeneficiaryTypeId;
                         ExistingEmployee.MedicalContractClassId = MedicalContractClassId;
                         ExistingEmployee.IsTemporarySuspension = IsTemporarySuspension;
-                        ExistingEmployee.IsPermanentSuspension = IsPermanentSuspension;
                         ExistingEmployee.SuspendToDate = SuspendToDate;
                         ExistingEmployee.SuspendFromDate = SuspendFromDate;
 
@@ -286,16 +291,5 @@ namespace DirectCompanies.Services
 
         }
 
-        public async Task<EmployeeDto> GetEmployee(decimal? EmployeeId, string? lang)
-        {
-            var user = await _userService.GetLoggedUser();
-
-            EmployeeDto EmployeeDto;
-           
-                var Employee =await _context.Employees.FirstOrDefaultAsync(c => c.Id == EmployeeId);
-                EmployeeDto = new EmployeeDto(Employee, lang,user!=null?user.CompanyName:null);
-            return EmployeeDto;
-
-        }
     }
 }
