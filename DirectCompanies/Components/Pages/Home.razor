@@ -156,7 +156,7 @@
             PageSize = PageSize
         };
 
-      
+
         var result = await IEmployeeService.GetAllEmployees(EmployeesPagedResult);
         Employees = result.Items;
         TotalItems = result.TotalItems;
@@ -217,10 +217,14 @@
             var Errors =await IEmployeeService.UploadEmployees(FileBase64);
             if (Errors.Any())
             {
-              _czAlert.ShowWarning(string.Join("<br/>", Errors));
+                _czAlert.ShowWarning(string.Join("<br/>", Errors));
 
             }
-            else  await LoadEmployees();
+
+            else { 
+                _czAlert.ShowSuccess();
+                await LoadEmployees();
+            }
 
         }
       }
