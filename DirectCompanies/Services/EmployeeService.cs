@@ -31,7 +31,6 @@ namespace DirectCompanies.Services
         {
             var user = await _userService.GetLoggedUser();
 
-
             var Query = _context.Employees.Where(c=>c.MedicalCustomerId==user.Id).AsQueryable();
              if (!string.IsNullOrEmpty(PagedResult.SearchName))
                 Query = Query.Where(c => c.Name.StartsWith(PagedResult.SearchName));
@@ -78,9 +77,9 @@ namespace DirectCompanies.Services
                 await _context.SaveChangesAsync();
 
                  if (ExistingEmployee == null)                
-                    await SendToOutBox(Employee, (int)EventType.Added);
+                    await SendToOutBox(Employee, EventType.Added);
                 else if (ExistingEmployee != null)
-                    await SendToOutBox(Employee, (int)EventType.Modified);
+                    await SendToOutBox(Employee, EventType.Modified);
                 return "";
             }
             catch (Exception ex)
@@ -100,7 +99,7 @@ namespace DirectCompanies.Services
                     _context.Remove(ExistingEmployee);
 
                     await _context.SaveChangesAsync();
-                    await SendToOutBox(ExistingEmployee, (int)EventType.Deleted);
+                    await SendToOutBox(ExistingEmployee, EventType.Deleted);
                 }
                 return "";
             }
@@ -265,9 +264,9 @@ namespace DirectCompanies.Services
                 {
                     _context.SaveChanges();
                     if (AddedEmployeeToSendToOutBox != null)
-                        await SendToOutBox(AddedEmployeeToSendToOutBox, (int)EventType.Added);
+                        await SendToOutBox(AddedEmployeeToSendToOutBox, EventType.Added);
                     else if (ModifiedEmployeeToSendToOutBox != null)
-                        await SendToOutBox(ModifiedEmployeeToSendToOutBox, (int)EventType.Modified);
+                        await SendToOutBox(ModifiedEmployeeToSendToOutBox, EventType.Modified);
 
                 }
 
@@ -278,7 +277,7 @@ namespace DirectCompanies.Services
             }
       
 
-        public async Task SendToOutBox(Employee Employee,int EventType)
+        public async Task SendToOutBox(Employee Employee,EventType EventType)
         {
             var EmployeesToSendToErpDto =  new EmployeeToSendToErpDto(Employee);
             var EventData= System.Text.Json.JsonSerializer.Serialize(EmployeesToSendToErpDto);

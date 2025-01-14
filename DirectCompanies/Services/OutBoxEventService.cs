@@ -1,9 +1,7 @@
 ﻿using DirectCompanies.Dtos;
 using DirectCompanies.Enums;
 using DirectCompanies.Models;
-using DocumentFormat.OpenXml.Features;
 using Microsoft.EntityFrameworkCore;
-using System.Text.Json;
 
 namespace DirectCompanies.Services
 {
@@ -15,12 +13,12 @@ namespace DirectCompanies.Services
         {
             _context = context;
         }
-        public async Task AddOutboxEvent(int EntityType,decimal EntityId, int EventType, string EventData)
+        public async Task AddOutboxEvent(int EntityType,decimal EntityId, EventType EventType, string EventData)
         {
             var outboxEvent = new OutBoxEvent
             {
                 EntityId = EntityId,
-                EventType = EventType,
+                EventType = (int)EventType,
                 EntityType = EntityType,
                 EventData = EventData, 
                 CreatedAt = DateTime.UtcNow
