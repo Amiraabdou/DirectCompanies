@@ -10,102 +10,102 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             
-                <EditForm Model="@TheEmployee" OnValidSubmit="Save">
+                <EditForm Model="@EmployeeDto" OnValidSubmit="Save">
                     <DataAnnotationsValidator />
 
             <div class="modal-body">
                 <div class="form-group">
                         <label>@Localization.Localizer.GetUi("Name")</label>
 
-                    <InputText  class="form-control" name="name" @bind-Value="@TheEmployee.Name" />
-                        <ValidationMessage For="@(() => TheEmployee.Name)" />
+                    <InputText  class="form-control" name="name" @bind-Value="@EmployeeDto.Name" />
+                        <ValidationMessage For="@(() => EmployeeDto.Name)" />
 
                 </div>
                 <div class="form-group">
                         <label>@Localization.Localizer.GetUi("IDCardNo")</label>
-                        <InputText class="form-control" name="name" @bind-Value="@TheEmployee.IDCardNo" />
-                        <ValidationMessage For="@(() => TheEmployee.IDCardNo)" />
+                        <InputText class="form-control" name="name" @bind-Value="@EmployeeDto.IDCardNo" />
+                        <ValidationMessage For="@(() => EmployeeDto.IDCardNo)" />
 
                     </div>
                     <div class="form-group">
                         <label>@Localization.Localizer.GetUi("PhoneNumber")</label>
 
-                        <InputText class="form-control" name="name" @bind-Value="@TheEmployee.PhoneNumber" />
-                        <ValidationMessage For="@(() => TheEmployee.PhoneNumber)" />
+                        <InputText class="form-control" name="name" @bind-Value="@EmployeeDto.PhoneNumber" />
+                        <ValidationMessage For="@(() => EmployeeDto.PhoneNumber)" />
 
                     </div>
                     <div class="form-group">
-                        <label>@Localization.Localizer.GetUi("Address") </label>
+                        <label>@Localization.Localizer.GetUi("Address")</label>
 
-                        <InputText class="form-control" name="name" @bind-Value="@TheEmployee.Address" />
-                        <ValidationMessage For="@(() => TheEmployee.Address)" />
+                        <InputText class="form-control" name="name" @bind-Value="@EmployeeDto.Address" />
+                        <ValidationMessage For="@(() => EmployeeDto.Address)" />
 
                     </div>
                     <div class="form-group">
                         <label>@Localization.Localizer.GetUi("MedicalContractClass")</label>
 
-                        <InputSelect class="form-control" @bind-Value="@TheEmployee.MedicalContractClassId">
+                        <InputSelect class="form-control" @bind-Value="@EmployeeDto.MedicalContractClassId">
                             <option></option>
                             @foreach (var MedicalContractClass in MedicalContractClasses)
                             {
                                 <option value="@MedicalContractClass.Id">@MedicalContractClass.Name</option>
                             }
                         </InputSelect>
-                        <ValidationMessage For="@(() => TheEmployee.MedicalContractClassId)" />
+                        <ValidationMessage For="@(() => EmployeeDto.MedicalContractClassId)" />
 
                     </div>
                     <div class="form-group">
                         <label>@Localization.Localizer.GetUi("BeneficiaryType")</label>
 
-                        <InputSelect class="form-control" @bind-Value="@TheEmployee.BeneficiaryTypeId">
+                        <InputSelect class="form-control" @bind-Value="@EmployeeDto.BeneficiaryTypeId">
                             <option></option>
                             @foreach (var BeneficiaryType in BeneficiaryTypes)
                             {
                                 <option value="@BeneficiaryType.Id">@BeneficiaryType.Name</option>
                             }
                         </InputSelect>
-                        <ValidationMessage For="@(() => TheEmployee.BeneficiaryTypeId)" />
+                        <ValidationMessage For="@(() => EmployeeDto.BeneficiaryTypeId)" />
 
                     </div>
                     <div class="form-group">
                         <label>@Localization.Localizer.GetUi("IsPermanentSuspension")</label>
 
-                        <InputCheckbox   @bind-Value="@TheEmployee.IsPermanentSuspension" />
-                        <ValidationMessage For="@(() => TheEmployee.IsPermanentSuspension)" />
+                        <InputCheckbox   @bind-Value="@EmployeeDto.IsPermanentSuspension" />
+                        <ValidationMessage For="@(() => EmployeeDto.IsPermanentSuspension)" />
                     </div>
                     <div class="form-group">
                         <label>@Localization.Localizer.GetUi("IsTemporarySuspension")</label>
 
-                        <InputCheckbox @bind-Value="@TheEmployee.IsTemporarySuspension" @onclick="OnTemporarySuspensionChanged" />
-                        <ValidationMessage For="@(() => TheEmployee.IsTemporarySuspension)" />
+                        <InputCheckbox @bind-Value="@EmployeeDto.IsTemporarySuspension" @onclick="OnTemporarySuspensionChanged" />
+                        <ValidationMessage For="@(() => EmployeeDto.IsTemporarySuspension)" />
                     </div>
-                    @if (TheEmployee.IsTemporarySuspension)
+                    @if (EmployeeDto.IsTemporarySuspension)
                     {
                         <div class="form-group">
                             <label>@Localization.Localizer.GetUi("SuspendFromDate")</label>
 
-                            <InputDate class="form-control" @bind-Value="@TheEmployee.SuspendFromDate" />
+                            <InputDate class="form-control" @bind-Value="@EmployeeDto.SuspendFromDate" />
 
-                            <ValidationMessage For="@(() => TheEmployee.SuspendFromDate)" />
+                            <ValidationMessage For="@(() => EmployeeDto.SuspendFromDate)" />
                         </div>
                         <div class="form-group">
                             <label>@Localization.Localizer.GetUi("SuspendToDate")</label>
 
-                            <InputDate class="form-control" @bind-Value="@TheEmployee.SuspendToDate" />
+                            <InputDate class="form-control" @bind-Value="@EmployeeDto.SuspendToDate" />
 
-                            <ValidationMessage For="@(() => TheEmployee.SuspendToDate)" />
+                            <ValidationMessage For="@(() => EmployeeDto.SuspendToDate)" />
                         </div>
                     }
                     <div class="form-group">
                         <label>@Localization.Localizer.GetUi("Client")</label>
 
-                        <InputText class="form-control" name="name" @bind-Value="@TheEmployee.CompanyName" readonly />
+                        <InputText class="form-control" name="name" @bind-Value="@EmployeeDto.CompanyName" readonly />
                     </div>
 
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" @onclick="() => Close()">Close</button>
+                    <button type="submit" class="btn btn-primary">@Localization.Localizer.GetUi("Save")</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" @onclick="() => Close()">@Localization.Localizer.GetUi("Close")</button>
 
             </div>
             </EditForm>
@@ -119,8 +119,10 @@
 
     [CascadingParameter]
     public Home _parent { get; set; } = new();
+    public EmployeeDto? EmployeeDto { get; set; } = new();
     [Parameter]
-    public EmployeeDto? TheEmployee { get; set; } = new();
+
+    public decimal? EmployeeID { get; set; }
 
 
     public List<KeyValue> MedicalContractClasses { get; set; }
@@ -131,6 +133,8 @@
 
     [Parameter] public EventCallback OnClose { get; set; }
     [Parameter] public string lang { get; set; }
+    [CascadingParameter]
+    public CzAlert _czAlert { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -150,9 +154,9 @@
 
         var user = await UserManager.FindByNameAsync(UserName);
 
-        if (TheEmployee?.Id == 0 || TheEmployee==null)
+        if (EmployeeID ==0 || EmployeeID == null)
         {
-            TheEmployee = new EmployeeDto
+            EmployeeDto = new EmployeeDto
         {
             Id = DecimalHelper.NewID(),
             Name = string.Empty,
@@ -169,46 +173,43 @@
             SuspendFromDate=DateTime.Now,
             SuspendToDate=DateTime.Now
 
-            
+
         };
+        }
+        else
+        {
+            EmployeeDto = await IEmployeeService.GetEmployee(EmployeeID, lang);
         }
     }
     public async void Close()
     {
-     
+
         OnClose.InvokeAsync();
 
     }
-    public void Save()
+    public async void Save()
     {
-        SetMedicalContractAndBeneficiaryTypeName(TheEmployee??new());
-        IEmployeeService.SaveEmployee(TheEmployee ?? new());
+        var savemsg=await  IEmployeeService.SaveEmployee(EmployeeDto ?? new());
+        if (string.IsNullOrEmpty(savemsg))
+        {
+            _czAlert.ShowSuccess();
+
+        }
+        else
+        {
+            _czAlert.ShowDanger(savemsg);
+        }
+
         this.Close();
         _parent.Search();
 
 
     }
-    private void SetMedicalContractAndBeneficiaryTypeName(EmployeeDto TheEmployee)
-    {
-        string MedicalContractClassName=null;
-        string BeneficiaryTypeName= null;
-        if(TheEmployee.MedicalContractClassId != null)
-        {
-            MedicalContractClassName = MedicalContractClasses.FirstOrDefault(x => x.Id == TheEmployee.MedicalContractClassId)?.Name;
-        }
-        if (TheEmployee.BeneficiaryTypeId != null)
-        {
-            BeneficiaryTypeName = BeneficiaryTypes.FirstOrDefault(x => x.Id == TheEmployee.BeneficiaryTypeId)?.Name;
-        }
-
-        TheEmployee.MedicalContractClassName = MedicalContractClassName;
-        TheEmployee.BeneficiaryTypeName = BeneficiaryTypeName;
-    }
     private async Task OnTemporarySuspensionChanged()
     {       
-            TheEmployee.SuspendToDate = null; 
-            TheEmployee.SuspendFromDate = null; 
-        
+        EmployeeDto.SuspendToDate = null;
+        EmployeeDto.SuspendFromDate = null;
+
         StateHasChanged();
     }
     

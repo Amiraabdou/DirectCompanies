@@ -1,26 +1,13 @@
-﻿using CsvHelper.Configuration;
-using CsvHelper;
+﻿
 using DirectCompanies.Dtos;
 using DirectCompanies.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Globalization;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
-using DocumentFormat.OpenXml.Office2016.Excel;
 using DirectCompanies.Localization;
-using DirectCompanies.Attributes;
 using static DirectCompanies.Attributes.LocalizedValidation;
-using DocumentFormat.OpenXml.Wordprocessing;
-using Microsoft.AspNetCore.Identity;
-using System.Linq;
 using DirectCompanies.Helper;
-using DocumentFormat.OpenXml.Spreadsheet;
-using Microsoft.AspNetCore.Hosting;
 using DirectCompanies.Enums;
 using Document = DirectCompanies.Enums.Document;
-using DocumentFormat.OpenXml.InkML;
-using ClosedXML.Excel;
-using Microsoft.AspNetCore.Http;
-using DocumentFormat.OpenXml.ExtendedProperties;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DirectCompanies.Services
 {
@@ -40,33 +27,33 @@ namespace DirectCompanies.Services
             _userService = userService;
             _outBoxEventService = outBoxEventService;
         }
-        public async Task<PagedResult<EmployeeDto>> GetAllEmployees(string? EmployeeName, string? Lang, int PageNumber, int PageSize)
+        public async Task<PagedResult<EmployeeDto>> GetAllEmployees(PagedResult<EmployeeDto>  PagedResult)
         {
             var user = await _userService.GetLoggedUser();
 
 
             var Query = _context.Employees.Where(c=>c.MedicalCustomerId==user.Id).AsQueryable();
-             if (!string.IsNullOrEmpty(EmployeeName))
-                Query = Query.Where(c => c.Name.StartsWith(EmployeeName));
+             if (!string.IsNullOrEmpty(PagedResult.SearchName))
+                Query = Query.Where(c => c.Name.StartsWith(PagedResult.SearchName));
    
             Query = Query.Include(e => e.MedicalContractClass)
                          .Include(e => e.BeneficiaryType);
 
             var EmployeesDto = await Query
-                        .Skip((PageNumber - 1) * PageSize)
-            .Take(PageSize)
-                        .Select(e => new EmployeeDto(e, Lang, user != null? user.CompanyName:null))
+                        .Skip((PagedResult.PageNumber - 1) * PagedResult.PageSize)
+                        .Take(PagedResult.PageSize)
+                        .Select(e => new EmployeeDto(e, PagedResult.Lang, user != null? user.CompanyName:null))
                          .ToListAsync();
             return new PagedResult<EmployeeDto>
             {
                 Items = EmployeesDto,
-                PageNumber = PageNumber,
-                PageSize = PageSize,
+                PageNumber = PagedResult.PageNumber,
+                PageSize = PagedResult.PageSize,
                 TotalItems = await Query.CountAsync()
             };
         }
 
-        public async Task SaveEmployee(EmployeeDto EmployeeDto)
+        public async Task<string> SaveEmployee(EmployeeDto EmployeeDto)
         {
             try
             {
@@ -94,28 +81,34 @@ namespace DirectCompanies.Services
                     await SendToOutBox(Employee, (int)EventType.Added);
                 else if (ExistingEmployee != null)
                     await SendToOutBox(Employee, (int)EventType.Modified);
+                return "";
             }
             catch (Exception ex)
             {
-                Console.Error.WriteLine($"An error occurred while saving the employee: {ex.Message}");
+               return ($"An error occurred while saving the employee: {ex.Message}");
             }
         }
    
-        public async Task DeleteEmployee(EmployeeDto EmployeeDto)
+        public async Task<string> DeleteEmployee(EmployeeDto EmployeeDto)
         {
-            var ExistingEmployee = await _context.Employees
-                .FirstOrDefaultAsync(c => c.Id == EmployeeDto.Id);
-            if (ExistingEmployee != null)
+            try
             {
-                _context.Remove(ExistingEmployee);
-             
-                await _context.SaveChangesAsync();
-               await SendToOutBox(ExistingEmployee, (int)EventType.Deleted);
+                var ExistingEmployee = await _context.Employees
+                    .FirstOrDefaultAsync(c => c.Id == EmployeeDto.Id);
+                if (ExistingEmployee != null)
+                {
+                    _context.Remove(ExistingEmployee);
+
+                    await _context.SaveChangesAsync();
+                    await SendToOutBox(ExistingEmployee, (int)EventType.Deleted);
+                }
+                return "";
             }
-            else
+            catch (Exception ex)
             {
-                Console.Error.WriteLine("Employee not found.");
+                return ($"An error occurred while Deleting the employee: {ex.Message}");
             }
+
         }
 
         public async Task<List<string>> UploadEmployees(string FileBase64)
@@ -162,7 +155,7 @@ namespace DirectCompanies.Services
 
                     else
                     {
-                        var regexAttribute = new LocalizedRegularExpressionAttribute(@"^(\w+\s){2,}\w+$", "NameMoreThanThreeError");
+                        var regexAttribute = new CzRegularExpressionAttribute(@"^(\w+\s){2,}\w+$", "NameMoreThanThreeError");
                         if (!regexAttribute.IsValid(item.Name))
                         {
                             itemErrors.Add(
@@ -177,7 +170,7 @@ namespace DirectCompanies.Services
 
                     else
                     {
-                        var regexAttribute = new LocalizedRegularExpressionAttribute(@"^\d{14}$", "NationalIDError");
+                        var regexAttribute = new CzRegularExpressionAttribute(@"^\d{14}$", "NationalIDError");
                         if (!regexAttribute.IsValid(item.IDCardNo))
                         {
                             itemErrors.Add(
@@ -191,7 +184,7 @@ namespace DirectCompanies.Services
                            $"{Localizer.GetString("PhoneNumber")} {Localizer.GetString("Required")}");
                     else
                     {
-                        var regexAttribute = new LocalizedRegularExpressionAttribute(@"^01[0-9]{9}$", "PhoneNumberError");
+                        var regexAttribute = new CzRegularExpressionAttribute(@"^01[0-9]{9}$", "PhoneNumberError");
                         if (!regexAttribute.IsValid(item.PhoneNumber))
                         {
                             itemErrors.Add(
@@ -291,6 +284,18 @@ namespace DirectCompanies.Services
             var EventData= System.Text.Json.JsonSerializer.Serialize(EmployeesToSendToErpDto);
 
             await _outBoxEventService.AddOutboxEvent((int)Document.Employee, Employee.Id, EventType, EventData);
+
+        }
+
+        public async Task<EmployeeDto> GetEmployee(decimal? EmployeeId, string? lang)
+        {
+            var user = await _userService.GetLoggedUser();
+
+            EmployeeDto EmployeeDto;
+           
+                var Employee =await _context.Employees.FirstOrDefaultAsync(c => c.Id == EmployeeId);
+                EmployeeDto = new EmployeeDto(Employee, lang,user!=null?user.CompanyName:null);
+            return EmployeeDto;
 
         }
     }

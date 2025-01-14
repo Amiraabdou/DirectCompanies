@@ -7,6 +7,9 @@
         public int TotalPages => (int)Math.Ceiling((double)TotalItems / PageSize);
         public int PageNumber { get; set; }
         public int PageSize { get; set; }
+        public string? SearchName { get; set; }
+        public string? Lang { get; set; }
+
     }
 
 }

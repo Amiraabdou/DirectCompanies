@@ -40,9 +40,7 @@ namespace DirectCompanies.Services
                 EventType = e.EventType,
                EventData= e.EventData,
             }).ToList();
-            var OutBoxData = System.Text.Json.JsonSerializer.Serialize(OutBoxEventDtos);
-
-            return OutBoxData;
+            return System.Text.Json.JsonSerializer.Serialize(OutBoxEventDtos);
         }
         public async Task ChangeOutBoxIsSent(List<int> ids)
         {

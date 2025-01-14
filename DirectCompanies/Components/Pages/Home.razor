@@ -58,7 +58,7 @@
                 <td>@Employee.MedicalContractClassName</td>
                 <td>@Employee.BeneficiaryTypeName</td>
                 <td>
-                    <button type="button" class="btn btn-info btn-sm" @onclick="() => EditEmployee(Employee)">@Localization.Localizer.GetUi("Edit")</button>
+                    <button type="button" class="btn btn-info btn-sm" @onclick="() => EditEmployee(Employee.Id)">@Localization.Localizer.GetUi("Edit")</button>
                     <button type="button" class="btn btn-danger btn-sm" @onclick="() => DeleteEmployee(Employee)">@Localization.Localizer.GetUi("Delete")</button>
                
                 </td>
@@ -103,7 +103,7 @@
 {
     <CascadingValue Value="this">
 
-        <DeleteMessage TheEmployee="@EmployeeToDelete" OnClose="CloseModal"></DeleteMessage>
+        <DeleteMessage Employee="@EmployeeToDelete" OnClose="CloseModal"></DeleteMessage>
     </CascadingValue>
 
 }
@@ -111,7 +111,7 @@
 {
     <CascadingValue Value="this">
 
-        <EmployeeModalComponent TheEmployee="@EmployeeToAddOrEdit" OnClose="CloseModal"></EmployeeModalComponent>
+        <EmployeeModalComponent EmployeeID="@EmployeeIDToAddOrEdit" OnClose="CloseModal"></EmployeeModalComponent>
     </CascadingValue>
 }
 
@@ -120,7 +120,7 @@
 
 @code {
     public List<EmployeeDto>? Employees { get; set; } = [];
-    public EmployeeDto? EmployeeToAddOrEdit = new();
+    public decimal? EmployeeIDToAddOrEdit = new ();
     public EmployeeDto? EmployeeToDelete = new();
     public bool ShowDeleteMsg { get; set; }
     public bool ShowEmployeeModal { get; set; }
@@ -135,6 +135,7 @@
     [Parameter]
     public string SearchName { get; set; } = "";
 
+
     [CascadingParameter]
     public CzAlert _czAlert { get; set; }
 
@@ -147,7 +148,16 @@
     }
     private async Task LoadEmployees()
     {
-        var result = await IEmployeeService.GetAllEmployees(SearchName, lang, PageNumber, PageSize); 
+        PagedResult<EmployeeDto> EmployeesPagedResult = new()
+        {
+            SearchName = SearchName,
+            Lang = lang,
+            PageNumber = PageNumber,
+            PageSize = PageSize
+        };
+
+      
+        var result = await IEmployeeService.GetAllEmployees(EmployeesPagedResult);
         Employees = result.Items;
         TotalItems = result.TotalItems;
     }
@@ -159,17 +169,17 @@
         await LoadEmployees();
     }
 
-    public void EditEmployee(EmployeeDto? EmployeeDto)
+    public void EditEmployee(decimal EmployeeId)
     {
         ShowEmployeeModal = true;
-        EmployeeToAddOrEdit = EmployeeDto;
+        EmployeeIDToAddOrEdit = EmployeeId;
 
 
     }
     private void CloseModal()
     {
         ShowEmployeeModal = false;
-        EmployeeToAddOrEdit = null;
+        EmployeeIDToAddOrEdit = null;
         ShowDeleteMsg = false;
         EmployeeToDelete = null;
     }

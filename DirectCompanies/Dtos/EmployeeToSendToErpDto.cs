@@ -1,16 +1,9 @@
 ﻿using DirectCompanies.Models;
-using DocumentFormat.OpenXml.Office2010.Excel;
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DirectCompanies.Dtos
 {
     public class EmployeeToSendToErpDto
     {
-        public EmployeeToSendToErpDto()
-        {
-            
-        }
+        public EmployeeToSendToErpDto() {}
         public EmployeeToSendToErpDto(Employee Employee)
         {
             Id = Employee.Id;
@@ -25,8 +18,6 @@ namespace DirectCompanies.Dtos
             IsTemporarySuspension = Employee.IsTemporarySuspension;
             SuspendFromDate = Employee.SuspendFromDate;
             SuspendToDate = Employee.SuspendToDate;
-
-
         }
         public decimal Id { get; set; }
         public string Name { get; set; }

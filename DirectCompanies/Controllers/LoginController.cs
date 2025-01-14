@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Localization;
+﻿
 using Microsoft.AspNetCore.Mvc;
-using System;
+
 
 namespace DirectCompanies.Controllers
 {
@@ -17,10 +17,7 @@ namespace DirectCompanies.Controllers
                     {
                         Expires= DateTimeOffset.UtcNow.AddHours(24)
                     }
-
-
                     );
-                    
             }
             return LocalRedirect( "/");
         }

@@ -1,9 +1,6 @@
 ﻿using DirectCompanies.Dtos;
-using DirectCompanies.Enums;
-using DirectCompanies.Models;
 using DirectCompanies.Security;
 using DirectCompanies.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 

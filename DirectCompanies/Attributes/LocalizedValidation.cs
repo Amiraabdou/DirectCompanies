@@ -1,35 +1,25 @@
 ﻿using DirectCompanies.Localization;
 using System.ComponentModel.DataAnnotations;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
-using System.Globalization;
-using Microsoft.Extensions.Localization;
-using System.Net.NetworkInformation;
 
 namespace DirectCompanies.Attributes
 {
     public class LocalizedValidation
     {
-        public class LocalizedRequiredAttribute : RequiredAttribute
+        public class CzRequiredAttribute : RequiredAttribute
         {
-            private readonly string LocalizationKey;
-
-            public LocalizedRequiredAttribute(string localizationKey)
-            {
-                LocalizationKey = localizationKey;
-            }
 
             public override string FormatErrorMessage(string name)
             {
-                var localizedErrorMessage = Localizer.GetString(LocalizationKey);
+                var localizedErrorMessage = Localizer.GetString("Required");
                 return string.IsNullOrEmpty(localizedErrorMessage) ? base.FormatErrorMessage(name) : localizedErrorMessage;
             }
 
         }
-        public class LocalizedRegularExpressionAttribute : RegularExpressionAttribute
+        public class CzRegularExpressionAttribute : RegularExpressionAttribute
         {
             private readonly string LocalizationKey;
 
-            public LocalizedRegularExpressionAttribute(string pattern, string localizationKey)
+            public CzRegularExpressionAttribute(string pattern, string localizationKey)
                 : base(pattern)
             {
                 LocalizationKey = localizationKey;
@@ -42,11 +32,11 @@ namespace DirectCompanies.Attributes
             }
         }
 
-        public class LocalizedRequiredIfSuspendedAttribute : ValidationAttribute
+        public class CzRequiredIfSuspendedAttribute : ValidationAttribute
         {
             private readonly string LocalizationKey;
 
-            public LocalizedRequiredIfSuspendedAttribute(string localizationKey)
+            public CzRequiredIfSuspendedAttribute(string localizationKey)
             {
                 LocalizationKey = localizationKey;
             }
@@ -63,8 +53,6 @@ namespace DirectCompanies.Attributes
                 {
                     var localizedErrorMessage = Localization.Localizer.GetString(LocalizationKey);
                     return new ValidationResult(localizedErrorMessage, new[] { validationContext.MemberName });
-
-                    return new ValidationResult(string.Format(localizedErrorMessage, validationContext.DisplayName));
                 }
 
                 return ValidationResult.Success;

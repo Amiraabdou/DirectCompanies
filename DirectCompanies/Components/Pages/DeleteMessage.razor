@@ -21,20 +21,31 @@
     public Home _parent { get; set; } = new();
     [Parameter] public EventCallback OnClose { get; set; }
     [Parameter]
-    public EmployeeDto? TheEmployee { get; set; } = new();
+    public EmployeeDto? Employee { get; set; } = new();
+    [CascadingParameter]
+    public CzAlert _czAlert { get; set; }
 
     private void ModalCancel()
     {
         OnClose.InvokeAsync(false);
     }
 
-    private void ModalOk()
+    private async void ModalOk()
     {
-        IEmployeeService.DeleteEmployee(TheEmployee);
+        var DeleteMsg=await IEmployeeService.DeleteEmployee(Employee);
+        if (string.IsNullOrEmpty(DeleteMsg))
+        {
+            _czAlert.ShowSuccess();
+
+        }
+        else
+        {
+            _czAlert.ShowDanger(DeleteMsg);
+        }
         OnClose.InvokeAsync(true);
         _parent.Search();
 
-        _parent.Employees.Remove(TheEmployee);
+        _parent.Employees.Remove(Employee);
 
 
     }
