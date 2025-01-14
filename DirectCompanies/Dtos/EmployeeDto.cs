@@ -4,7 +4,7 @@ using DirectCompanies.Helper;
 using DirectCompanies.Attributes;
 using Microsoft.AspNetCore.Components.Forms;
 using System.Resources;
-using static DirectCompanies.Attributes.LocalizedValidation;
+using static DirectCompanies.Attributes.Validation;
 
 namespace DirectCompanies.Dtos
 {

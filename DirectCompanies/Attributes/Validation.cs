@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DirectCompanies.Attributes
 {
-    public class LocalizedValidation
+    public class Validation
     {
         public class CzRequiredAttribute : RequiredAttribute
         {

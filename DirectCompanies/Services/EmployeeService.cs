@@ -3,7 +3,7 @@ using DirectCompanies.Dtos;
 using DirectCompanies.Models;
 using Microsoft.EntityFrameworkCore;
 using DirectCompanies.Localization;
-using static DirectCompanies.Attributes.LocalizedValidation;
+using static DirectCompanies.Attributes.Validation;
 using DirectCompanies.Helper;
 using DirectCompanies.Enums;
 using Document = DirectCompanies.Enums.Document;
